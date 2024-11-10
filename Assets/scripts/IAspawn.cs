@@ -8,56 +8,37 @@ public class IAspawn : MonoBehaviour
     public STATE state;
 
     public GameObject IAship;
-    private float posx;
-    private float posz;
-    private float next;
-    public float spawn;
-    private bool spawner;
+    public float spawnInterval;
+    private float nextSpawnTime;
+    private bool canSpawn;
 
-    // Update is called once per frame
-    void SetClone()
+    private IAFactory iaFactory;
+
+    private void Start()
     {
-        GameObject clone = Instantiate(IAship);
-
-        float pos = Random.Range(1,5);
-
-        if (pos == 1)
-        {
-            posx = Random.Range(-140, 141);
-            clone.transform.position = new Vector3(posx, 1.6f, -105);
-        }
-        else if(pos == 2)
-        {
-            posx = Random.Range(-140, 141);
-            clone.transform.position = new Vector3(posx, 1.6f, 70);
-        }
-        else if (pos == 3)
-        {
-            posz = Random.Range(-95, 61);
-            clone.transform.position = new Vector3(-150, 1.6f, posz);
-        }
-        else
-        {
-            {
-                posz = Random.Range(-95, 61);
-                clone.transform.position = new Vector3(150, 1.6f, posz);
-            }
-        }
+        iaFactory = new IAFactory();
+        canSpawn = true;
     }
+
     void Update()
     {
-        if (spawner == true && Time.time >= next)
+        if (canSpawn && Time.time >= nextSpawnTime)
         {
-            SetClone();
-            SetClone();
-            SetClone();
-            SetClone();
-            spawner = false;
+            SpawnShips(4); // Genera 4 naves en cada activación
+            canSpawn = false;
         }
-        else if (spawner == false)
+        else if (!canSpawn)
         {
-            next = Time.time + spawn;
-            spawner = true;
+            nextSpawnTime = Time.time + spawnInterval;
+            canSpawn = true;
+        }
+    }
+
+    private void SpawnShips(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            iaFactory.CreateIA(IAship);
         }
     }
 }
