@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class IAspawn : MonoBehaviour
 {
-    public enum STATE { RELEASE, STAY }
-    public STATE state;
-
     public GameObject IAship;
     public float spawnInterval;
     private float nextSpawnTime;
