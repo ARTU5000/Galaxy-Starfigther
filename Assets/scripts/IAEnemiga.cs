@@ -48,6 +48,9 @@ public class IAEnemiga : MonoBehaviour
     private float timer;
     private float end;
 
+    //Nuevas variables
+    private NavMeshAgent agent;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;   // asigna la ubicacion del jugador 1
@@ -59,8 +62,13 @@ public class IAEnemiga : MonoBehaviour
         end = Time.time + timer;
     }
 
-    void Update()
+    private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    void Update()
+    {/*
         ppx = player.transform.position.x;   // posicion del jugador 1 en x
         ppz = player.transform.position.z;   // posicion del jugador 1 en z
         p2px = player2.transform.position.x; // posicion del jugador 2 en x
@@ -74,32 +82,41 @@ public class IAEnemiga : MonoBehaviour
         diap1x = Mathf.Abs(iapx - ppx);  // distancia de la IA con el jugador 1 en x
         diap1z = Mathf.Abs(iapz - ppz);  // distancia de la IA con el jugador 1 en z
         diap2x = Mathf.Abs(iapx - p2px); // distancia de la IA con el jugador 2 en x
-        diap2z = Mathf.Abs(iapz - p2pz); // distancia de la IA con el jugador 2 en z
+        diap2z = Mathf.Abs(iapz - p2pz); // distancia de la IA con el jugador 2 en z*/
 
-        if (diap1x < diap2x && diap1z < diap2z)      // si el jugador 1 esta mas cerca
+        float distanceP1 = Vector3.Distance(player.transform.position, agent.transform.position);
+        float distanceP2 = Vector3.Distance(player2.transform.position, agent.transform.position);
+
+        if (distanceP1 < distanceP2 && distanceP1 <= sightrange)      // si el jugador 1 esta mas cerca
         {
-            wiplayer = py1;                          // seguira al jugador 1
+            enemy.SetDestination(player.position);                          // seguira al jugador 1
+            wpset = false;
         }
-        else if (diap1x > diap2x && diap1z > diap2z) // si el jugador 2 esta mas cerca
+        else if (distanceP2 < distanceP1 && distanceP2 <= sightrange) // si el jugador 2 esta mas cerca
         {
-            wiplayer = py2;                          // seguira al jugador 2
+            enemy.SetDestination(player2.position);                        // seguira al jugador 2
+            wpset = false;
+        }
+        else 
+        {
+            Patrol();
         }
 
         playerisr = Physics.CheckSphere(transform.position, sightrange, wiplayer);  // revisa si el jugador esta en el rango de vision
         playeriar = Physics.CheckSphere(transform.position, attackrange, wiplayer); // revisa si el jugador esta en rango de ataque
-
+        /*
         if (!playerisr && !playeriar) // si el jugador no esta en rango de vista ni rango de ataque
         {
             Patrol();                 // la IA patrullará
         }
 
-        if (playerisr && !playeriar) // si el jugador esta en rango de visión pero no en rango de ataque
+        /*if (playerisr && !playeriar) // si el jugador esta en rango de visión pero no en rango de ataque
         {
             chase();                 // la IA perseguirá al jugador
             wpset = false;
-        }
-
-        if (playerisr && playeriar) // si el jugador esta en rango de vision y de ataque 
+        }*/
+        
+        if (distanceP1 <= attackrange || distanceP2 <= attackrange) // si el jugador esta en rango de vision y de ataque 
         {
             attack();               // la IA atacará al jugador
             wpset = false;
