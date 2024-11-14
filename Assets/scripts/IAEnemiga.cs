@@ -110,7 +110,7 @@ public class IAEnemiga : MonoBehaviour
             Patrol();                 // la IA patrullará
         }
 
-        /*if (playerisr && !playeriar) // si el jugador esta en rango de visión pero no en rango de ataque
+        /*-if (playerisr && !playeriar) // si el jugador esta en rango de visión pero no en rango de ataque
         {
             chase();                 // la IA perseguirá al jugador
             wpset = false;
