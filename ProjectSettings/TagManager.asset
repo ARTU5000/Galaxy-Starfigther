@@ -18,6 +18,10 @@ TagManager:
   - Player2
   - ns2
   - pointership
+  - P1NS
+  - P2NS
+  - P1HS
+  - P2HS
   layers:
   - Default
   - TransparentFX
