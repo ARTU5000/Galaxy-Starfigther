@@ -38,4 +38,9 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.volume = volume;
     }
+    
+    public AudioSource AudioSource
+    {
+        get { return audioSource; }
+    }
 }
