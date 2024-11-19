@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class MoveCommand : ICommand
 {
-    private Transform _player;
-    private Vector3 _direction;
-    private float _speed;
-    private float _rotationSpeed;
+    private Transform player;
+    private Vector3 direction;
+    private float speed;
+    private float rotationSpeed;
 
-    public MoveCommand(Transform player, Vector3 direction, float speed, float rotationSpeed)
+    public MoveCommand(Transform _player, Vector3 _direction, float _speed, float _rotationSpeed)
     {
-        _player = player;
-        _direction = direction.normalized;
-        _speed = speed;
-        _rotationSpeed = rotationSpeed;
+        player = _player;
+        direction = _direction.normalized;
+        speed = _speed;
+        rotationSpeed = _rotationSpeed;
     }
 
     public void Execute()
     {
         // Movimiento
-        _player.Translate(_direction * _speed * Time.deltaTime, Space.World);
+        player.Translate(direction * speed * Time.deltaTime, Space.World);
 
         // Rotación
-        if (_direction != Vector3.zero)
+        if (direction != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(_direction, Vector3.up);
-            _player.rotation = Quaternion.RotateTowards(_player.rotation, toRotation, _rotationSpeed * Time.deltaTime);
+            Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+            player.rotation = Quaternion.RotateTowards(player.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
 }

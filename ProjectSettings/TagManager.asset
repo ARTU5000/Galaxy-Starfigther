@@ -31,14 +31,14 @@ TagManager:
   - UI
   - player
   - player2
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - P1NS
+  - P2NS
+  - P1HS
+  - P2HS
+  - wall
+  - asteroide
+  - enemy
+  - ES
   - 
   - 
   - 

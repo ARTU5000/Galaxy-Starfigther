@@ -10,15 +10,20 @@ public class PlayerInputHandler : MonoBehaviour
     public Transform P2NS;
     public Transform P1HS;
     public Transform P2HS;
-    public GameObject projectilePrefab;
-    public GameObject heavyProjectilePrefab;
+
+    public PlayerObjectPool NSObjectPool;
+    public PlayerObjectPool HSObjectPool;
+
     public float movementSpeed = 5f;
     public float rotationSpeed = 360f;
 
-    private float player1ShootCooldown = 0.5f;
-    private float player1NextShootTime = 0f;
-    private float player2ShootCooldown = 0.5f;
-    private float player2NextShootTime = 0f;
+    public float nsCooldown = 0.5f;
+    public float hsCooldown = 0.5f;
+
+    private float p1nsNextShootTime = 0f;
+    private float p2nsNextShootTime = 0f;
+    private float p1hsNextShootTime = 0f;
+    private float p2hsNextShootTime = 0f;
 
     private void Awake()
     {
@@ -38,45 +43,65 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void HandlePlayer1Input()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("HorizontalP1"), 0, Input.GetAxis("VerticalP1"));
+        Vector3 direction = new Vector3(Input.GetAxis("HorizontalP1"), 0, Input.GetAxis("VerticalP1"));//movimiento jugador 1
         if (direction != Vector3.zero)
         {
             ICommand moveCommand = new MoveCommand(player1, direction, movementSpeed, rotationSpeed);
             moveCommand.Execute();
         }
 
-        if (Input.GetButtonDown("Fire3P1"))
+        if (Input.GetButtonDown("Fire3P1"))//disparo normal jugador 1
         {
-            ICommand shootCommand = new ShootCommand(projectilePrefab, P1NS, player1ShootCooldown, player1NextShootTime);
-            shootCommand.Execute();
+            if (Time.time >= p1nsNextShootTime)
+            {
+                ICommand shootCommand = new ShootCommand(NSObjectPool, P1NS);
+                shootCommand.Execute();
+
+                p1nsNextShootTime = Time.time + nsCooldown;
+            }
         }
 
-        if (Input.GetButtonDown("Fire2P1"))
+        if (Input.GetButtonDown("Fire2P1"))//disparo pesado jugador 1
         {
-            ICommand heavyShootCommand = new HeavyShootCommand(heavyProjectilePrefab, P1HS, player1ShootCooldown, player1NextShootTime);
-            heavyShootCommand.Execute();
+            if (Time.time >= p1hsNextShootTime)
+            {
+                ICommand heavyShootCommand = new HeavyShootCommand(HSObjectPool, P1HS);
+                heavyShootCommand.Execute();
+
+                p1hsNextShootTime = Time.time + hsCooldown;
+            }
         }
     }
 
     private void HandlePlayer2Input()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2"));
+        Vector3 direction = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2"));//movimiento jugador 2
         if (direction != Vector3.zero)
         {
             ICommand moveCommand = new MoveCommand(player2, direction, movementSpeed, rotationSpeed);
             moveCommand.Execute();
         }
 
-        if (Input.GetButtonDown("Fire3P2"))
+        if (Input.GetButtonDown("Fire3P2"))//disparo normal jugador 2
         {
-            ICommand shootCommand = new ShootCommand(projectilePrefab, P2NS, player2ShootCooldown, player2NextShootTime);
-            shootCommand.Execute();
+            if (Time.time >= p2nsNextShootTime)
+            {
+                ICommand shootCommand = new ShootCommand(NSObjectPool, P2NS);
+                shootCommand.Execute();
+
+                p2nsNextShootTime = Time.time + nsCooldown;
+            }
         }
 
-        if (Input.GetButtonDown("Fire2P2"))
+        if (Input.GetButtonDown("Fire2P2"))//disparo pesado jugador 2
         {
-            ICommand heavyShootCommand = new HeavyShootCommand(heavyProjectilePrefab, P2HS, player1ShootCooldown, player1NextShootTime);
-            heavyShootCommand.Execute();
+            if (Time.time >= p2hsNextShootTime)
+            {
+                ICommand heavyShootCommand = new HeavyShootCommand(HSObjectPool, P2HS);
+                heavyShootCommand.Execute();
+
+                p2hsNextShootTime = Time.time + hsCooldown;
+            }
         }
     }
 }

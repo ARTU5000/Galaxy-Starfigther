@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class ShootCommand : ICommand
 {
-    private GameObject _projectilePrefab;
-    private Transform _spawnPoint;
-    private float _cooldown;
-    private float _nextShootTime;
+    private PlayerObjectPool objectPool;
+    private Transform spawnPoint;
 
-    public ShootCommand(GameObject projectilePrefab, Transform spawnPoint, float cooldown, float nextShootTime)
+    public ShootCommand(PlayerObjectPool _objectPool, Transform _spawnPoint)
     {
-        _projectilePrefab = projectilePrefab;
-        _spawnPoint = spawnPoint;
-        _cooldown = cooldown;
-        _nextShootTime = nextShootTime;
+        objectPool = _objectPool;
+        spawnPoint = _spawnPoint;
     }
 
     public void Execute()
-    {
-        if (Time.time >= _nextShootTime)
+    { //Toma proyectiles de un object pool
+        GameObject projectile = objectPool.Spawn();
+        if (projectile != null)
         {
-            Object.Instantiate(_projectilePrefab, _spawnPoint.position, _spawnPoint.rotation);
-            _nextShootTime = Time.time + _cooldown;
+            projectile.transform.position = spawnPoint.position;
+            projectile.transform.rotation = spawnPoint.rotation;
         }
     }
 }

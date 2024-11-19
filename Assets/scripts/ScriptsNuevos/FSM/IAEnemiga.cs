@@ -26,7 +26,7 @@ public class IAEnemiga : MonoBehaviour
     public AttackState attackState;// atacando
     public DeadState deadState;// explotando
 
-    private float end;
+    [SerializeField] private float end;
     private float timer;
 
     private void Awake()
@@ -45,7 +45,7 @@ public class IAEnemiga : MonoBehaviour
     {
         ChangeState(patrolState); // Empezar patrullando
         
-        timer = 60;
+        timer = 45;
         end = Time.time + timer;
     }
 
@@ -76,24 +76,20 @@ public class IAEnemiga : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // si colisiona con un objeto jugador
+        if (collision.gameObject.CompareTag("Player"))//colisiona con un jugador
         {
             health -= 5;
         }
-        else if (collision.gameObject.CompareTag("Normal_shoot")) // si colisiona con un objeto disparo normal
+        else if (collision.gameObject.CompareTag("Normal_shoot"))//colisiona con un disparo normal
         {
             health -= 5;
         }
-        else if (collision.gameObject.CompareTag("Heavy_shoot")) // si colisiona con un objeto disparo fuerte
-        { // aparecer� 5 fragmentos y desaparecer�
-
-            for (int i = 0; i < 5; i++)
-            Instantiate(fragment, transform.position, Quaternion.identity);
-            
-            Destroy(gameObject);
+        else if (collision.gameObject.CompareTag("Heavy_shoot"))//colisiona con un disparo fuerte
+        {
+            ChangeState(deadState);
         }
 
-        if (collision.gameObject.CompareTag("Asteroid")) // si colisiona con un objeto asteroide
+        if (collision.gameObject.CompareTag("Asteroid"))//colisiona con un asteroide
         {
             health -= 5;
         }

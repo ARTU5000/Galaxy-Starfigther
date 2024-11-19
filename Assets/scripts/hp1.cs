@@ -19,7 +19,7 @@ public class hp1 : MonoBehaviour
     public int playernum;
     public GameObject fragment;
     public float posx;
-    public GameObject señuelo;
+    public GameObject senuelo;
 
     void start()
     {
@@ -51,7 +51,7 @@ public class hp1 : MonoBehaviour
 
                 ships--;
                 playerships.text = ships.ToString();
-                señuelo.SetActive(false);
+                senuelo.SetActive(false);
             }
             else
             {
@@ -61,8 +61,7 @@ public class hp1 : MonoBehaviour
                 Instantiate(fragment, transform.position, Quaternion.identity);
                 Instantiate(fragment, transform.position, Quaternion.identity);
 
-                
-                señuelo.SetActive(true);
+                senuelo.SetActive(true);
 
                 gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
 
