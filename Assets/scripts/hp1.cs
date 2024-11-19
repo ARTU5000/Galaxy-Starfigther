@@ -64,6 +64,7 @@ public class hp1 : MonoBehaviour
                 senuelo.SetActive(true);
 
                 gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
+                transform.position = new Vector3(posx, -500, -25);
 
                 this.gameObject.SetActive(false);
             }

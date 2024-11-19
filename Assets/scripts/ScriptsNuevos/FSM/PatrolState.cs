@@ -22,7 +22,7 @@ public class PatrolState : IState
         float distanceToPlayer1 = Vector3.Distance(ia.player1.position, ia.agent.transform.position);
         float distanceToPlayer2 = Vector3.Distance(ia.player2.position, ia.agent.transform.position);
 
-        if (distanceToPlayer1 <= ia.sightrange || distanceToPlayer2 <= ia.sightrange)// revisa si el jugador esta en el rango de vision
+        if ((distanceToPlayer1 <= ia.sightrange && ia.player1.gameObject.activeSelf) || (distanceToPlayer2 <= ia.sightrange && ia.player2.gameObject.activeSelf))// revisa si el jugador esta en el rango de vision
         {
             if (distanceToPlayer1 <= ia.attackrange || distanceToPlayer2 <= ia.attackrange)// revisa si el jugador esta en rango de ataque
                 ia.ChangeState(ia.attackState);//ataca

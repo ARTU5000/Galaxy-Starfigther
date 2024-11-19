@@ -23,7 +23,7 @@ public class ChaseState : IState
         if (Vector3.Distance(target.position, ia.agent.transform.position) <= ia.attackrange)// revisa si el jugador esta en rango de ataque
             ia.ChangeState(ia.attackState);//ataca
 
-        if (Vector3.Distance(target.position, ia.agent.transform.position) >= ia.sightrange)// revisa si el jugador esta en el rango de vision
+        if (Vector3.Distance(target.position, ia.agent.transform.position) >= ia.sightrange || !target.gameObject.activeSelf)// revisa si el jugador esta en el rango de vision
             ia.ChangeState(ia.patrolState);//patrulla
     }
 
