@@ -65,8 +65,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p1hsNextShootTime)
             {
-                ICommand heavyShootCommand = new HeavyShootCommand(HSObjectPool, P1HS);
-                heavyShootCommand.Execute();
+                ICommand shootCommand = new ShootCommand(HSObjectPool, P1HS);
+                shootCommand.Execute();
 
                 p1hsNextShootTime = Time.time + hsCooldown;
             }
@@ -97,8 +97,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p2hsNextShootTime)
             {
-                ICommand heavyShootCommand = new HeavyShootCommand(HSObjectPool, P2HS);
-                heavyShootCommand.Execute();
+                ICommand shootCommand = new ShootCommand(HSObjectPool, P2HS);
+                shootCommand.Execute();
 
                 p2hsNextShootTime = Time.time + hsCooldown;
             }
