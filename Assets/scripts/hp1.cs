@@ -27,7 +27,8 @@ public class hp1 : MonoBehaviour
         actual_shield = 20;
         rb = GetComponent<Rigidbody>();
         
-        ships = 5;
+        ships = 3;
+        playerships.text = ships.ToString();
 
     }
     // Update is called once per frame
@@ -40,10 +41,7 @@ public class hp1 : MonoBehaviour
         {
             if (ships > 0)
             {
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
+                for(int i = 0; i < 5; i++)
                 Instantiate(fragment, transform.position, Quaternion.identity);
 
                 actual_life = 20;
@@ -55,10 +53,7 @@ public class hp1 : MonoBehaviour
             }
             else
             {
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
-                Instantiate(fragment, transform.position, Quaternion.identity);
+                for(int i = 0; i < 5; i++)
                 Instantiate(fragment, transform.position, Quaternion.identity);
 
                 senuelo.SetActive(true);
@@ -72,81 +67,34 @@ public class hp1 : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Normal_shoot"))
         {
             if (actual_shield > 0)
-            {
                 actual_shield--;
-            }
             else
-            {
                 actual_life--;
-            }
-        }
-        else if (collision.gameObject.CompareTag("Normal_shoot"))
-        {
-            if (actual_shield > 0)
-            {
-                actual_shield--;
-            }
-            else
-            {
-                actual_life--;
-            }
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))
         {
             if (actual_shield > 0)
-            {
-                actual_shield--;
-                actual_shield--;
-                actual_shield--;
-                actual_shield--;
-            }
+                actual_shield -= 4;
             else
-            {
-                actual_life--;
-                actual_life--;
-                actual_life--;
-                actual_life--;
-            }
+                actual_life -= 4;
         }
 
-        if (collision.gameObject.CompareTag("Asteroid"))
+        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("Enemy"))
         {
             if (actual_shield > 0)
-            {
-                actual_shield--;
-                actual_shield--;
-            }
+                actual_shield -= 2;
             else
-            {
-                actual_life--;
-                actual_life--;
-            }
-        }
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            if (actual_shield > 0)
-            {
-                actual_shield--;
-                actual_shield--;
-            }
-            else
-            {
-                actual_life--;
-                actual_life--;
-            }
+                actual_life -= 2;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Respawn")
-        {
             transform.position = new Vector3(posx, 0, -25);
-        }
     }
 
     public int vidas()

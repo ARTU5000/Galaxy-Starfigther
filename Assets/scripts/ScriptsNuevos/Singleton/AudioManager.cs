@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play();
+        audioSource.loop = true;
     }
 
     public void StopAudio()

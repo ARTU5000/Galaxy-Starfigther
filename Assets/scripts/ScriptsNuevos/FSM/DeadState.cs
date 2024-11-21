@@ -18,6 +18,7 @@ public class DeadState : IState
             GameObject.Instantiate(ia.fragment, ia.transform.position, Quaternion.identity);
         }
 
+        ia.ObjectPool.DestroyAll();
         GameObject.Destroy(ia.gameObject);
     }
 

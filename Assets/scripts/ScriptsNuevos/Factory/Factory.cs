@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Factory : MonoBehaviour
+public class Factory : IProduct
 {
-    public abstract IProduct GetProduct(Vector3 position);
+    public GameObject CreateIA(GameObject iaPrefab)
+    {
+        return GameObject.Instantiate(iaPrefab);
+    }
 }

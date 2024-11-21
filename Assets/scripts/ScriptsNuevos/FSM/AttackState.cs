@@ -21,7 +21,12 @@ public class AttackState : IState
     {
         if (!attacked)
         {
-            GameObject.Instantiate(ia.plasma, ia.shoot.transform.position, ia.shoot.transform.rotation);
+            GameObject projectile = ia.ObjectPool.Spawn();
+            if (projectile != null)
+            {
+                projectile.transform.position = ia.shoot.transform.position;
+                projectile.transform.rotation = ia.shoot.transform.rotation;
+            }
             attacked = true;
             ia.Invoke(nameof(ia.ResetAttack), ia.timebetweenattacks);
         }

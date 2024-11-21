@@ -57,7 +57,7 @@ public class PlayerInputHandler : MonoBehaviour
                 ICommand shootCommand = new ShootCommand(NSObjectPool, P1NS);
                 shootCommand.Execute();
 
-                p1nsNextShootTime = Time.time + nsCooldown;
+                p1nsNextShootTime = Time.time + (nsCooldown/2);
             }
         }
 
@@ -89,7 +89,7 @@ public class PlayerInputHandler : MonoBehaviour
                 ICommand shootCommand = new ShootCommand(NSObjectPool, P2NS);
                 shootCommand.Execute();
 
-                p2nsNextShootTime = Time.time + nsCooldown;
+                p2nsNextShootTime = Time.time + (nsCooldown/2);
             }
         }
 

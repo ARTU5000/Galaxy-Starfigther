@@ -37,8 +37,8 @@ public class Survival : MonoBehaviour
         {
             pause = true;
             Time.timeScale = 0f;
-            estadopartida.text = "¡DERROTA!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menú";
+            estadopartida.text = "DERROTA!";
+            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
         }
         else if (Input.GetKey(KeyCode.R) && pause == true)
         {
@@ -58,12 +58,12 @@ public class Survival : MonoBehaviour
 
     void Ganar()
     {
-        if (timr >= 300)
+        if (timr >= 120)
         {
             pause = true;
             Time.timeScale = 0f;
-            estadopartida.text = "¡VICTORIA!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menú";
+            estadopartida.text = "VICTORIA!";
+            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
         }
         else if (Input.GetKey(KeyCode.R) && pause == true)
         {

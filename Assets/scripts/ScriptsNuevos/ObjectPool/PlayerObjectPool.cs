@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerObjectPool : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab; // Prefab del objeto a instanciar
+    public GameObject prefab; // Prefab del objeto a instanciar
     [SerializeField] private int initialSize = 10; // Tamaño inicial del pool
 
     List<GameObject> pool = new List<GameObject>();
@@ -48,5 +48,17 @@ public class PlayerObjectPool : MonoBehaviour
                 break;
             }
         }
+    }
+    public void DestroyAll()
+    {
+        foreach (var obj in pool)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        // Limpia la lista después de destruir los objetos del pool
+        pool.Clear();
     }
 }

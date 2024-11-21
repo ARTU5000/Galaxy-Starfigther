@@ -339,6 +339,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -51.807
       objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
+    - target: {fileID: -4041641714634873723, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
     - target: {fileID: 919132149155446097, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
       propertyPath: m_Name
       value: nave plata (1)
@@ -377,7 +385,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -716,7 +724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &416656009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1401,6 +1409,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 29.806
       objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
+    - target: {fileID: -4041641714634873723, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
     - target: {fileID: 919132149155446097, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
       propertyPath: m_Name
       value: nave plata (2)
@@ -2111,7 +2127,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Supervivencia
+  m_Text: Jugar
 --- !u!222 &1801726070
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2460,6 +2476,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.512
       objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
+    - target: {fileID: -4041641714634873723, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132dbd780f6e2b64f9c6206def5e4857, type: 2}
     - target: {fileID: 919132149155446097, guid: 3cb65d2bd2f5790488d30696414bcdd3, type: 3}
       propertyPath: m_Name
       value: nave plata

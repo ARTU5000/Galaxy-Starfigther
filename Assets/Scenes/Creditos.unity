@@ -328,8 +328,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "DISE\xD1O \nJorge Arturo Rodr\xEDguez Bale\xF3n   \n\nMODELOS 3D\nJorge
     Arturo Rodr\xEDguez Bale\xF3n\n\nIM\xC1GENES/FONDOS   \nJorge Arturo Rodr\xEDguez
-    Bale\xF3n \nNASA Image Library                                                                             
-    \n\nCon el apoyo de Rogelio Trejo P\xE9rez"
+    Bale\xF3n \nNASA Image Library                                  "
 --- !u!222 &136324016
 CanvasRenderer:
   m_ObjectHideFlags: 0

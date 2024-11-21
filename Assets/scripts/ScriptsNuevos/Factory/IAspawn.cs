@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAspawn : MonoBehaviour
+public class IASpawn : MonoBehaviour
 {
     public GameObject IAship;
     public float spawnInterval;
     private float nextSpawnTime;
     private bool canSpawn;
 
-    private IAFactory iaFactory;
+    private Factory iaFactory;
 
     private void Start()
     {
-        iaFactory = new IAFactory();
+        // Inicializamos la fábrica concreta
+        iaFactory = new Factory();
         canSpawn = true;
     }
 
-    void Update()
+    private void Update()
     {
         if (canSpawn && Time.time >= nextSpawnTime)
         {

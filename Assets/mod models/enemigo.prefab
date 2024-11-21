@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 694377003703608965}
   - component: {fileID: 694377003703608964}
   - component: {fileID: 7154116118868537420}
+  - component: {fileID: -4018604794251864904}
+  - component: {fileID: -5716833362943395046}
   m_Layer: 14
   m_Name: enemigo
   m_TagString: Enemy
@@ -110,8 +112,7 @@ MonoBehaviour:
   timebetweenattacks: 0.5
   sightrange: 70
   attackrange: 40
-  health: 10
-  end: 0
+  ObjectPool: {fileID: 0}
 --- !u!65 &694377003703608964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -145,6 +146,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f1951a4d417b41bebb1f5cc404b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4018604794251864904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694377003703608974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601402cd445df6949b2140eb3daa4a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  ai: {fileID: 0}
+  end: 0
+--- !u!114 &-5716833362943395046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694377003703608974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  initialSize: 3
+  reset: 3
 --- !u!1 &694377003870756787
 GameObject:
   m_ObjectHideFlags: 0
