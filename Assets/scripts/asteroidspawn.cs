@@ -12,27 +12,33 @@ public class asteroidspawn : MonoBehaviour
     private bool spawner;
     private Factory aFactory;
     public int totalInGroup;
+    public float y;
+    public float z;
 
     void Start()
     {
         aFactory = new Factory();
+        spawner = true;
     }
 
     void SetClone(int count)
     {
-        GameObject clone = aFactory.CreateIA(asteroid);
+        for (int i = 0; i < count; i++)
+        {
+            GameObject clone = aFactory.CreateIA(asteroid);
 
-        float posX = Random.Range(x1, x2);
-        clone.transform.position = new Vector3(posX, 3.6f, 70);
+            float posX = Random.Range(x1, x2);
+            clone.transform.position = new Vector3(posX, y, z);
+        }
     }
     void Update()
     {
-        if(spawner == true && Time.time>=next )
+        if(spawner && Time.time>=next )
         {
             SetClone(totalInGroup);
             spawner = false;
         }
-        else if (spawner == false)
+        else if (!spawner)
         {
             next = Time.time + spawn;
             spawner = true;

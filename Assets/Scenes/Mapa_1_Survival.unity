@@ -268,7 +268,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -466,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 185837800}
   - component: {fileID: 185837801}
+  - component: {fileID: 185837802}
   m_Layer: 0
   m_Name: asteroid spawner down
   m_TagString: Untagged
@@ -495,7 +496,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185837799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d78b1850559d8f498a9f89e3388bab7, type: 3}
   m_Name: 
@@ -505,6 +506,25 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 10
+--- !u!114 &185837802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185837799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985e7456363f01e41841a5aa665a2dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 6017737231234748278, guid: ed79f1953a5b7574d91efbe76d1202c0, type: 3}
+  x1: -160
+  x2: 160
+  spawn: 10
+  totalInGroup: 4
+  y: 3.6
+  z: -105
 --- !u!1 &187637259
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +604,9 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 7
-  totalInGroup: 0
+  totalInGroup: 4
+  y: 3.6
+  z: 70
 --- !u!1 &275416273
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +643,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -779,7 +801,9 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 11
-  totalInGroup: 0
+  totalInGroup: 4
+  y: 3.6
+  z: 70
 --- !u!1 &382450271
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1007,8 @@ MonoBehaviour:
   x2: 160
   spawn: 4
   totalInGroup: 0
+  y: 3.6
+  z: 70
 --- !u!1 &554670158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,6 +1832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099678193}
   - component: {fileID: 1099678194}
+  - component: {fileID: 1099678195}
   m_Layer: 0
   m_Name: asteroid spawner down (2)
   m_TagString: Untagged
@@ -1835,7 +1862,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099678192}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d78b1850559d8f498a9f89e3388bab7, type: 3}
   m_Name: 
@@ -1845,6 +1872,25 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 7
+--- !u!114 &1099678195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099678192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985e7456363f01e41841a5aa665a2dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 6017737231234748278, guid: ed79f1953a5b7574d91efbe76d1202c0, type: 3}
+  x1: -160
+  x2: 160
+  spawn: 7
+  totalInGroup: 4
+  y: 3.6
+  z: -105
 --- !u!1 &1128620686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,7 +2061,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -2485,6 +2531,8 @@ GameObject:
   - component: {fileID: 1378032459}
   - component: {fileID: 1378032458}
   - component: {fileID: 1378032457}
+  - component: {fileID: 1378032461}
+  - component: {fileID: 1378032460}
   m_Layer: 0
   m_Name: players
   m_TagString: Untagged
@@ -2523,7 +2571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 423078719403144126, guid: bf139e436da38cd429db9d55cbbce514, type: 3}
-  initialSize: 10
+  initialSize: 5
   reset: 2
 --- !u!114 &1378032458
 MonoBehaviour:
@@ -2558,12 +2606,44 @@ MonoBehaviour:
   P2NS: {fileID: 0}
   P1HS: {fileID: 0}
   P2HS: {fileID: 0}
-  NSObjectPool: {fileID: 1378032458}
-  HSObjectPool: {fileID: 1378032457}
+  NS1ObjectPool: {fileID: 1378032458}
+  HS1ObjectPool: {fileID: 1378032457}
+  NS2ObjectPool: {fileID: 1378032461}
+  HS2ObjectPool: {fileID: 1378032460}
   movementSpeed: 50
   rotationSpeed: 600
   nsCooldown: 0.3
   hsCooldown: 0.6
+--- !u!114 &1378032460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378032455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 423078719403144126, guid: 5a7268166b92613469ba1870e1388559, type: 3}
+  initialSize: 5
+  reset: 0
+--- !u!114 &1378032461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378032455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1579776244983150009, guid: d2ae02c2dc33f0740ab3e56f039c868e, type: 3}
+  initialSize: 10
+  reset: 0
 --- !u!1001 &1460345917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2716,6 +2796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596758484}
   - component: {fileID: 1596758485}
+  - component: {fileID: 1596758486}
   m_Layer: 0
   m_Name: asteroid spawner down (1)
   m_TagString: Untagged
@@ -2745,7 +2826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596758483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d78b1850559d8f498a9f89e3388bab7, type: 3}
   m_Name: 
@@ -2755,6 +2836,25 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 4
+--- !u!114 &1596758486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596758483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985e7456363f01e41841a5aa665a2dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 6017737231234748278, guid: ed79f1953a5b7574d91efbe76d1202c0, type: 3}
+  x1: -160
+  x2: 160
+  spawn: 4
+  totalInGroup: 4
+  y: 3.6
+  z: -105
 --- !u!1 &1689697389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3582,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -3674,6 +3774,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1774673420}
+  - {fileID: 1211699597}
+  - {fileID: 990002601}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 175680525}
@@ -3682,5 +3784,3 @@ SceneRoots:
   - {fileID: 1218970935}
   - {fileID: 554670159}
   - {fileID: 1378032456}
-  - {fileID: 1211699597}
-  - {fileID: 990002601}

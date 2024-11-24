@@ -22,7 +22,7 @@ public class Pausa : MonoBehaviour
         {
             pause = true;
             Time.timeScale = 0f;
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menú";
+            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menï¿½";
 
         }
         else if (Input.GetKey(KeyCode.R) && pause == true)
@@ -37,7 +37,7 @@ public class Pausa : MonoBehaviour
 
             pause = false;
             Time.timeScale = 1f;
-            SceneManager.LoadScene("MenuSupervivencia");
+            SceneManager.LoadScene("Menu");
         }
         else if (Input.GetKeyDown(KeyCode.Space) && pause == true)
         {

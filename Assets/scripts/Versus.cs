@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class Versus : MonoBehaviour
 { 
     public GameObject gameOver1;
@@ -23,43 +22,24 @@ public class Versus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GanarJ1();
-        GanarJ2();
+        Ganar();
     }
 
-    void GanarJ1()
+    void Ganar()
     {
         if (gameOver1.activeSelf)
         {
             pause = true;
             Time.timeScale = 0f;
-            estadopartida.text = "¡GANO J2!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menú";
+            estadopartida.text = "GANO J2!";
+            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menï¿½";
         }
-        else if (Input.GetKey(KeyCode.R) && pause == true)
-        {
-
-            pause = false;
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        else if (Input.GetKey(KeyCode.M) && pause == true)
-        {
-
-            pause = false;
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("MenuVersus");
-        }
-    }
-
-    void GanarJ2()
-    {
-        if (gameOver2.activeSelf)
+        else if (gameOver2.activeSelf)
         {
             pause = true;
             Time.timeScale = 0f;
-            estadopartida.text = "¡GANO J1!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menú";
+            estadopartida.text = "GANO J1!";
+            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menï¿½";
         }
         else if (Input.GetKey(KeyCode.R) && pause == true)
         {

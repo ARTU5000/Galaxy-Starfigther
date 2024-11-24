@@ -11,8 +11,10 @@ public class PlayerInputHandler : MonoBehaviour
     public Transform P1HS;
     public Transform P2HS;
 
-    public PlayerObjectPool NSObjectPool;
-    public PlayerObjectPool HSObjectPool;
+    public PlayerObjectPool NS1ObjectPool;
+    public PlayerObjectPool HS1ObjectPool;
+    public PlayerObjectPool NS2ObjectPool;
+    public PlayerObjectPool HS2ObjectPool;
 
     public float movementSpeed = 5f;
     public float rotationSpeed = 360f;
@@ -54,7 +56,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p1nsNextShootTime)
             {
-                ICommand shootCommand = new ShootCommand(NSObjectPool, P1NS);
+                ICommand shootCommand = new ShootCommand(NS1ObjectPool, P1NS);
                 shootCommand.Execute();
 
                 p1nsNextShootTime = Time.time + (nsCooldown/2);
@@ -65,7 +67,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p1hsNextShootTime)
             {
-                ICommand shootCommand = new ShootCommand(HSObjectPool, P1HS);
+                ICommand shootCommand = new ShootCommand(HS1ObjectPool, P1HS);
                 shootCommand.Execute();
 
                 p1hsNextShootTime = Time.time + hsCooldown;
@@ -86,7 +88,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p2nsNextShootTime)
             {
-                ICommand shootCommand = new ShootCommand(NSObjectPool, P2NS);
+                ICommand shootCommand = new ShootCommand(NS2ObjectPool, P2NS);
                 shootCommand.Execute();
 
                 p2nsNextShootTime = Time.time + (nsCooldown/2);
@@ -97,7 +99,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Time.time >= p2hsNextShootTime)
             {
-                ICommand shootCommand = new ShootCommand(HSObjectPool, P2HS);
+                ICommand shootCommand = new ShootCommand(HS2ObjectPool, P2HS);
                 shootCommand.Execute();
 
                 p2hsNextShootTime = Time.time + hsCooldown;

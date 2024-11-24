@@ -39,20 +39,7 @@ public class Survival : MonoBehaviour
             Time.timeScale = 0f;
             estadopartida.text = "DERROTA!";
             instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
-        }
-        else if (Input.GetKey(KeyCode.R) && pause == true)
-        {
-
-            pause = false;
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        else if (Input.GetKey(KeyCode.M) && pause == true)
-        {
-
-            pause = false;
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("MenuSupervivencia");
+            Final();
         }
     }
 
@@ -64,8 +51,13 @@ public class Survival : MonoBehaviour
             Time.timeScale = 0f;
             estadopartida.text = "VICTORIA!";
             instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
+            Final();
         }
-        else if (Input.GetKey(KeyCode.R) && pause == true)
+    }
+
+    void Final()
+    {
+        if (Input.GetKey(KeyCode.R) && pause == true)
         {
 
             pause = false;

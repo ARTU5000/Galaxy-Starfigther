@@ -28,39 +28,20 @@ public class asteroidend : MonoBehaviour
         
         if (final == true)
         {
-            Instantiate(fragment, transform.position, Quaternion.identity);
-            Instantiate(fragment, transform.position, Quaternion.identity);
-            Instantiate(fragment, transform.position, Quaternion.identity);
-            Instantiate(fragment, transform.position, Quaternion.identity);
-            Instantiate(fragment, transform.position, Quaternion.identity);
+            for (int i = 0; i < 5; i++)
+                Instantiate(fragment, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
+        if (collision.gameObject.CompareTag("Asteroid") && contador >= 6)
             final = true;
-        }
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            final = true;
-        }
-
-        if (collision.gameObject.CompareTag("Heavy_shoot") || collision.gameObject.CompareTag("Normal_shoot"))
-        {
-            final = true;
-        }
-
-        if (collision.gameObject.CompareTag("Asteroid") && contador == 6)
-        {
-            final = true;
-        }
-        else
-        {
+        else if (collision.gameObject.CompareTag("Asteroid") && contador < 6)
             contador++;
-        }
+        else 
+            final = true;
     }
 
 }
