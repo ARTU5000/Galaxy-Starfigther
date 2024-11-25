@@ -10,7 +10,7 @@ public class asteroidspawn : MonoBehaviour
     private float next;
     public float spawn;
     private bool spawner;
-    private Factory aFactory;
+    private Factory aFactory; //Fabrica
     public int totalInGroup;
     public float y;
     public float z;
@@ -25,7 +25,7 @@ public class asteroidspawn : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            GameObject clone = aFactory.CreateIA(asteroid);
+            GameObject clone = aFactory.CreateIA(asteroid); //pide un asteroide a la fábrica
 
             float posX = Random.Range(x1, x2);
             clone.transform.position = new Vector3(posX, y, z);

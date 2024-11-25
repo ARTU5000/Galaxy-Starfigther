@@ -24,7 +24,7 @@ public class SurvivalMenu : MonoBehaviour
 
     public void nvs2()
     {
-        SceneManager.LoadScene("Mapa_7_Survival");
+        SceneManager.LoadScene("Mapa_2_Survival");
     }
 
     public void nvs3()

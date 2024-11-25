@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6273510a2f770754eb488d42cd745b19
   - enabled: 1
-    path: Assets/Scenes/Creditos.unity
-    guid: dd082653077c4af4086a42f2fcc67020
-  - enabled: 1
     path: Assets/Scenes/Controles.unity
     guid: 506820b2ccb3f3743bf42a6f23d809ba
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: dd082653077c4af4086a42f2fcc67020
   - enabled: 1
     path: Assets/Scenes/MenuSupervivencia.unity
     guid: bd4a508abfce2ce4ba6c112b7f712dcd
@@ -35,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mapa_6_Survival.unity
     guid: d834d6fd144ac9748bc8476398651522
-  - enabled: 1
-    path: Assets/Scenes/Mapa_7_Survival.unity
-    guid: eb734aa982791c54cab61000afd9ecc9
   - enabled: 1
     path: Assets/Scenes/MenuVersus.unity
     guid: c3364e23b3560b048b237f773b062644

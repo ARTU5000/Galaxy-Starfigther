@@ -41,14 +41,16 @@ public class Versus : MonoBehaviour
             estadopartida.text = "GANO J1!";
             instructions.text = "oprime R para repetir patrida                oprime M para regresar al men�";
         }
-        else if (Input.GetKey(KeyCode.R) && pause == true)
+        
+        if (Input.GetKey(KeyCode.R) && pause == true)
         {
 
             pause = false;
             Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (Input.GetKey(KeyCode.M) && pause == true)
+        
+        if (Input.GetKey(KeyCode.M) && pause == true)
         {
 
             pause = false;
