@@ -5,13 +5,15 @@ using UnityEngine;
 public class AILife : MonoBehaviour
 {
     public float health = 10;// indica la vida de la IA
-    public IAEnemiga ai;
+    //public IAEnemiga ai;
+    public Enemy ai;
     [SerializeField] private float end;
     private float timer;
 
      private void Awake()
     {
-        ai = GetComponent<IAEnemiga>();
+        //ai = GetComponent<IAEnemiga>();
+        ai = GetComponent<Enemy>();
     }
     
     private void Start()
@@ -24,7 +26,8 @@ public class AILife : MonoBehaviour
     {
         if (health <= 0 || Time.time >= end)//condiciones de muerte
         {
-            ai.ChangeState(ai.deadState);
+            //ai.ChangeState(ai.deadState);
+            ai.machine.ChangeState(EStates.Die);
         }
     }
 
@@ -44,7 +47,8 @@ public class AILife : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))//colisiona con un disparo fuerte
         {
-            ai.ChangeState(ai.deadState);
+            //ai.ChangeState(ai.deadState);
+            ai.machine.ChangeState(EStates.Die);
         }
     }
 }

@@ -19,10 +19,10 @@ public class IAEnemiga : MonoBehaviour
     public float attackrange; // indica el rango para atacar al jugador
 
     private IState currentState;// estado actual
-    public PatrolState patrolState;//patrullando
-    public ChaseState chaseState;// siguiendo
-    public AttackState attackState;// atacando
-    public DeadState deadState;// explotando
+    public IState patrolState;//patrullando
+    public IState chaseState;// siguiendo
+    public IState attackState;// atacando
+    public IState deadState;// explotando
     
     public PlayerObjectPool ObjectPool;
 
