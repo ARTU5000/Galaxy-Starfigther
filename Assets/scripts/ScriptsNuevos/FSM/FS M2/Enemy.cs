@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();// asigna el "terreno" donde se mueve la         
         player1 = GameObject.FindWithTag("Player").transform;// asigna la ubicacion del jugador 1
         player2 = GameObject.FindWithTag("Player2").transform;// asigna la ubicacion del jugador 2
+        machine.setIA(this);
     }
 
     private void Start()

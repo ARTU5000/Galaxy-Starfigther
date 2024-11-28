@@ -7,7 +7,7 @@ public class Machine : MonoBehaviour
     public EStates currentState;
     private Enemy ia;
     
-    public Machine(Enemy ia)
+    public void setIA(Enemy ia)
     {
         this.ia = ia;
     }
