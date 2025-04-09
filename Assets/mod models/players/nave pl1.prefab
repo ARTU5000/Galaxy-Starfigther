@@ -56,9 +56,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5138446427806862709}
   - component: {fileID: 5138446427806862711}
-  - component: {fileID: 5138446427806862708}
   - component: {fileID: 5138446427806862706}
   - component: {fileID: 5138446427806862707}
+  - component: {fileID: 4673057689137299266}
+  - component: {fileID: 8055663510116344137}
+  - component: {fileID: 1048371196169763632}
   m_Layer: 6
   m_Name: nave pl1
   m_TagString: Player
@@ -93,7 +95,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5138446427806862713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c8caadee73de6c40b68d79ebf9288b6, type: 3}
   m_Name: 
@@ -103,26 +105,12 @@ MonoBehaviour:
   actual_life: 20
   actual_shield: 20
   playerships: {fileID: 0}
-  ships: 5
+  ships: 3
   gameOver: {fileID: 0}
-  playernum: 0
+  playernum: 1
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   posx: -80
-  "se\xF1uelo": {fileID: 0}
---- !u!114 &5138446427806862708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138446427806862713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd8bc187fa84644c8dc58111049d5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  rotationSpeed: 600
+  senuelo: {fileID: 0}
 --- !u!54 &5138446427806862706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,6 +159,64 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 4, z: 5}
   m_Center: {x: 0, y: 1, z: 1}
+--- !u!114 &4673057689137299266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671f4bccb53ead24c9ef33ecbcf03df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PNS: {fileID: 0}
+  PHS: {fileID: 0}
+  NS1ObjectPool: {fileID: 8055663510116344137}
+  HS1ObjectPool: {fileID: 1048371196169763632}
+  movementSpeed: 50
+  rotationSpeed: 600
+  nsCooldown: 0.3
+  hsCooldown: 0.6
+  horizontal: HorizontalP1
+  vertical: VerticalP1
+  fire2: Fire2P1
+  fire3: Fire3P1
+  tagPlayer: Player
+  tagPNS: P1NS
+  tagPHS: P1HS
+--- !u!114 &8055663510116344137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1579776244983150009, guid: bbaafcaa164e4cc468c54190221ce28f, type: 3}
+  initialSize: 20
+  reset: 1
+--- !u!114 &1048371196169763632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 423078719403144126, guid: bf139e436da38cd429db9d55cbbce514, type: 3}
+  initialSize: 10
+  reset: 2
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0
