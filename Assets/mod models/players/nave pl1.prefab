@@ -182,11 +182,11 @@ MonoBehaviour:
   hsCooldown: 0.6
   horizontal: HorizontalP1
   vertical: VerticalP1
-  fire2: Fire2P1
-  fire3: Fire3P1
+  fireN: Fire1P1
   tagPlayer: Player
   tagPNS: P1NS
   tagPHS: P1HS
+  PlayerNum: 0
 --- !u!114 &8055663510116344137
 MonoBehaviour:
   m_ObjectHideFlags: 0

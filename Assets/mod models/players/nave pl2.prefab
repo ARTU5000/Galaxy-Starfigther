@@ -370,19 +370,19 @@ MonoBehaviour:
   player: {fileID: 0}
   PNS: {fileID: 0}
   PHS: {fileID: 0}
-  NS1ObjectPool: {fileID: 0}
-  HS1ObjectPool: {fileID: 0}
+  NS1ObjectPool: {fileID: 6428587069351782220}
+  HS1ObjectPool: {fileID: 5132452626094522071}
   movementSpeed: 50
   rotationSpeed: 600
   nsCooldown: 0.3
   hsCooldown: 0.6
   horizontal: HorizontalP2
   vertical: VerticalP2
-  fire2: Fire2P2
-  fire3: Fire3P2
+  fireN: Fire1P2
   tagPlayer: Player2
   tagPNS: P2NS
   tagPHS: P2HS
+  PlayerNum: 0
 --- !u!114 &6428587069351782220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4207957449009104394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
   m_Name: 
