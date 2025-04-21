@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -456,6 +455,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!1 &185837799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1603,38 @@ PrefabInstance:
       propertyPath: playerships
       value: 
       objectReference: {fileID: 1867212338}
+    - target: {fileID: 5132452626094522071, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: reset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132452626094522071, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779932246388512615, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: fire
+      value: Fire1P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779932246388512615, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: fireH
+      value: Fire2P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779932246388512615, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: fireN
+      value: Fire1P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779932246388512615, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: HS1ObjectPool
+      value: 
+      objectReference: {fileID: 1038349370}
+    - target: {fileID: 5779932246388512615, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: NS1ObjectPool
+      value: 
+      objectReference: {fileID: 1038349371}
+    - target: {fileID: 6428587069351782220, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: reset
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1613,6 +1645,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4207957449009104398, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
   m_PrefabInstance: {fileID: 1038349368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1038349370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5132452626094522071, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+  m_PrefabInstance: {fileID: 1038349368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1038349371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6428587069351782220, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+  m_PrefabInstance: {fileID: 1038349368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1045424736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,6 +2706,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1378032456}
     m_Modifications:
+    - target: {fileID: 4673057689137299266, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
+      propertyPath: fire
+      value: Fire1P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673057689137299266, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
+      propertyPath: fireH
+      value: Fire2P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673057689137299266, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
+      propertyPath: fireN
+      value: Fire1P1
+      objectReference: {fileID: 0}
     - target: {fileID: 5138446427565960288, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.2

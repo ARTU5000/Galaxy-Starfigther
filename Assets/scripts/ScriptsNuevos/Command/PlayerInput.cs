@@ -8,9 +8,11 @@ public class PlayerInput : MonoBehaviour
     public Transform PNS;
     public Transform PHS;
 
+    //Objectpools
     public PlayerObjectPool NS1ObjectPool;
     public PlayerObjectPool HS1ObjectPool;
 
+    //Valores numéricos
     public float movementSpeed = 50f;
     public float rotationSpeed = 600f;
 
@@ -23,13 +25,15 @@ public class PlayerInput : MonoBehaviour
     //Axix y botones
     public string horizontal;
     public string vertical;
-    public string fire2;
-    public string fire3;
+    public string fireN;
 
     //textos de busqueda
     public string tagPlayer;
     public string tagPNS;
     public string tagPHS;
+
+    //numero de jugador
+    public int PlayerNum;
 
     private void Awake()
     {
@@ -45,14 +49,14 @@ public class PlayerInput : MonoBehaviour
 
     private void HandlePlayer1Input()
     {
-        Vector3 direction = new Vector3(Input.GetAxis(horizontal), 0, Input.GetAxis(vertical));//movimiento jugador 1
+        Vector3 direction = new Vector3(Input.GetAxis(horizontal), 0, Input.GetAxis(vertical));//movimiento jugador 
         if (direction != Vector3.zero)
         {
             ICommand moveCommand = new MoveCommand(player, direction, movementSpeed, rotationSpeed);
             moveCommand.Execute();
         }
 
-        if (Input.GetButtonDown(fire3))//disparo normal jugador 1
+        if (Input.GetAxis(fireN) > 0)//disparo normal jugador 
         {
             if (Time.time >= p1nsNextShootTime)
             {
@@ -63,7 +67,7 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown(fire2))//disparo pesado jugador 1
+        if (Input.GetAxis(fireN) < 0)//disparo pesado jugador 
         {
             if (Time.time >= p1hsNextShootTime)
             {
