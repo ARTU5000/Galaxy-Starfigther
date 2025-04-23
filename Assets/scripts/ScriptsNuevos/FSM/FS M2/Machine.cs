@@ -6,6 +6,7 @@ public class Machine : MonoBehaviour
 {
     public EStates currentState;
     private Enemy ia;
+    public int totalPlayers;
     
     public void setIA(Enemy ia)
     {

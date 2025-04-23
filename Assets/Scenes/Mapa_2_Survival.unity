@@ -1351,6 +1351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nave pl2
       objectReference: {fileID: 0}
+    - target: {fileID: 4207957449009104394, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4207957449009104396, guid: 2a55219f876b6034a91d1ce7f5e0295a, type: 3}
       propertyPath: m_Center.y
       value: 1
@@ -1952,10 +1956,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071460345}
-  - component: {fileID: 1071460350}
-  - component: {fileID: 1071460349}
-  - component: {fileID: 1071460348}
-  - component: {fileID: 1071460347}
   - component: {fileID: 1071460346}
   m_Layer: 0
   m_Name: players
@@ -1989,85 +1989,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071460344}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Script: {fileID: 11500000, guid: f00a41184c63b7047ba652529e35721e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 423078719403144126, guid: 5a7268166b92613469ba1870e1388559, type: 3}
-  initialSize: 10
-  reset: 0
---- !u!114 &1071460347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071460344}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1579776244983150009, guid: d2ae02c2dc33f0740ab3e56f039c868e, type: 3}
-  initialSize: 20
-  reset: 0
---- !u!114 &1071460348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071460344}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 423078719403144126, guid: bf139e436da38cd429db9d55cbbce514, type: 3}
-  initialSize: 10
-  reset: 2
---- !u!114 &1071460349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071460344}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1579776244983150009, guid: bbaafcaa164e4cc468c54190221ce28f, type: 3}
-  initialSize: 20
-  reset: 1
---- !u!114 &1071460350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071460344}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb358319081ef142b9ed691d39a08b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  P1NS: {fileID: 0}
-  P2NS: {fileID: 0}
-  P1HS: {fileID: 0}
-  P2HS: {fileID: 0}
-  NS1ObjectPool: {fileID: 1071460349}
-  HS1ObjectPool: {fileID: 1071460348}
-  NS2ObjectPool: {fileID: 1071460347}
-  HS2ObjectPool: {fileID: 1071460346}
-  movementSpeed: 50
-  rotationSpeed: 600
-  nsCooldown: 0.3
-  hsCooldown: 0.6
+  playerPrefab: {fileID: 5138446427806862713, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
+  totalPlayers: 4
 --- !u!1 &1105938435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nave pl1
       objectReference: {fileID: 0}
+    - target: {fileID: 5138446427806862713, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5138446428189215788, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.700001
@@ -3308,7 +3240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1957416529
 Transform:
   m_ObjectHideFlags: 0

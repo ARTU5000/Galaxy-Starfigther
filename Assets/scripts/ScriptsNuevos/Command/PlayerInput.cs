@@ -37,9 +37,6 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindWithTag(tagPlayer).transform;   // asigna el jugador 1
-        PNS = GameObject.FindWithTag(tagPNS).transform;   // asigna el jugador 1
-        PHS = GameObject.FindWithTag(tagPHS).transform;   // asigna el jugador 1
     }
 
     void Update()
@@ -76,6 +73,35 @@ public class PlayerInput : MonoBehaviour
 
                 p1hsNextShootTime = Time.time + hsCooldown;
             }
+        }
+    }
+
+    public void AssignControllerInputs()
+    {
+        switch (PlayerNum)
+        {
+            case 0:
+                horizontal = "HorizontalP1";
+                vertical = "VerticalP1";
+                fireN = "Fire1P1";
+                break;
+            case 1:
+                horizontal = "HorizontalP2";
+                vertical = "VerticalP2";
+                fireN = "Fire1P2";
+                break;
+            case 2:
+                horizontal = "HorizontalP3";
+                vertical = "VerticalP3";
+                fireN = "Fire1P3";
+                break;
+            case 3:
+                horizontal = "HorizontalP4";
+                vertical = "VerticalP4";
+                fireN = "Fire1P4";
+                break;
+            default:
+                break;
         }
     }
 }
