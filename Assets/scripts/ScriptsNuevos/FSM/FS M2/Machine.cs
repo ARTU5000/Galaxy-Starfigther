@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Machine : MonoBehaviour
 {
@@ -26,12 +27,12 @@ public class Machine : MonoBehaviour
         switch (currentState)
         {
             case EStates.Patrol:
-                float distanceToPlayer1 = Vector3.Distance(ia.player1.position, ia.agent.transform.position);
-                float distanceToPlayer2 = Vector3.Distance(ia.player2.position, ia.agent.transform.position);
+                float distanceToPlayer = Vector3.Distance(ia.GetClosestPlayer().position, ia.agent.transform.position);
 
-                if ((distanceToPlayer1 <= ia.sightrange && ia.player1.gameObject.activeSelf) || (distanceToPlayer2 <= ia.sightrange && ia.player2.gameObject.activeSelf))// revisa si el jugador esta en el rango de vision
+
+                if (distanceToPlayer <= ia.sightrange && ia.GetClosestPlayer().gameObject.activeSelf)// revisa si el jugador esta en el rango de vision
                 {
-                    if (distanceToPlayer1 <= ia.attackrange || distanceToPlayer2 <= ia.attackrange)// revisa si el jugador esta en rango de ataque
+                    if (distanceToPlayer <= ia.attackrange)// revisa si el jugador esta en rango de ataque
                         ChangeState(EStates.Attack);//ataca
                     else
                         ChangeState(EStates.Follow);//persigue

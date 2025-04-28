@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public NavMeshAgent agent;// a esta varle se le asigna el "terreno" donde se mueve la     
-    public Transform player1;    // a esta varle se le asigna la ubicacion del jugador 1
-    public Transform player2;   // a esta varle se le asigna la ubicacion del jugador 2
+    //public Transform player1;    // a esta varle se le asigna la ubicacion del jugador 1
+    //public Transform player2;   // a esta varle se le asigna la ubicacion del jugador 2
+
+    public GameObject[] players;
 
     public GameObject fragment; // indica los objetos que apareceran al desaparecer
     public GameObject plasma;   // indica el objeto que dispara
@@ -30,8 +32,11 @@ public class Enemy : MonoBehaviour
         ObjectPool = GetComponent<PlayerObjectPool>();
         ObjectPool.prefab = plasma;
         agent = GetComponent<NavMeshAgent>();// asigna el "terreno" donde se mueve la         
-        player1 = GameObject.FindWithTag("Player").transform;// asigna la ubicacion del jugador 1
-        player2 = GameObject.FindWithTag("Player2").transform;// asigna la ubicacion del jugador 2
+        //player1 = GameObject.FindWithTag("Player").transform;// asigna la ubicacion del jugador 1
+        //player2 = GameObject.FindWithTag("Player2").transform;// asigna la ubicacion del jugador 2
+
+        players = GameObject.FindGameObjectsWithTag("Player");
+
         machine.setIA(this);
     }
 
@@ -98,11 +103,26 @@ public class Enemy : MonoBehaviour
         float randomZ = Random.Range(-95, 60);
         walkpoint = new Vector3(randomX, transform.position.y, randomZ);
     }
-    private Transform GetClosestPlayer()// busca coordenadas a donde dirijirse
-    {
+    public Transform GetClosestPlayer()// busca coordenadas a donde dirijirse
+    {/*
         float distanceToPlayer1 = Vector3.Distance(player1.position, agent.transform.position);
         float distanceToPlayer2 = Vector3.Distance(player2.position, agent.transform.position);
 
-        return distanceToPlayer1 < distanceToPlayer2 ? player1 : player2;
+        return distanceToPlayer1 < distanceToPlayer2 ? player1 : player2;*/
+
+        float distanceToPlayer = float.MaxValue;
+        int closest = 0;
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            float distanceToPlayerI = Vector3.Distance(players[i].transform.position, agent.transform.position);
+            if (distanceToPlayerI < distanceToPlayer)
+            {
+                distanceToPlayer = distanceToPlayerI;
+                closest = i;
+            }
+        }
+
+        return players[closest].transform;
     }
 }
