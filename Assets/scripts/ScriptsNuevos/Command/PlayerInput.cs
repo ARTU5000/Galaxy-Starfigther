@@ -26,6 +26,7 @@ public class PlayerInput : MonoBehaviour
     public string horizontal;
     public string vertical;
     public string fireN;
+    public string fireH;
 
     //textos de busqueda
     public string tagPlayer;
@@ -46,14 +47,14 @@ public class PlayerInput : MonoBehaviour
 
     private void HandlePlayer1Input()
     {
-        Vector3 direction = new Vector3(Input.GetAxis(horizontal), 0, Input.GetAxis(vertical));//movimiento jugador 
+        Vector3 direction = new Vector3(Input.GetAxisRaw(horizontal), 0, Input.GetAxisRaw(vertical));//movimiento jugador 
         if (direction != Vector3.zero)
         {
             ICommand moveCommand = new MoveCommand(player, direction, movementSpeed, rotationSpeed);
             moveCommand.Execute();
         }
 
-        if (Input.GetAxis(fireN) > 0)//disparo normal jugador 
+        if (Input.GetAxisRaw(fireN) > 0)//disparo normal jugador 
         {
             if (Time.time >= p1nsNextShootTime)
             {
@@ -64,7 +65,7 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        if (Input.GetAxis(fireN) < 0)//disparo pesado jugador 
+        if (Input.GetAxisRaw(fireH) < 0)//disparo pesado jugador 
         {
             if (Time.time >= p1hsNextShootTime)
             {
@@ -84,21 +85,25 @@ public class PlayerInput : MonoBehaviour
                 horizontal = "HorizontalP1";
                 vertical = "VerticalP1";
                 fireN = "Fire1P1";
+                fireH = "Fire2P1";
                 break;
             case 1:
                 horizontal = "HorizontalP2";
                 vertical = "VerticalP2";
                 fireN = "Fire1P2";
+                fireH = "Fire2P2";
                 break;
             case 2:
                 horizontal = "HorizontalP3";
                 vertical = "VerticalP3";
                 fireN = "Fire1P3";
+                fireH = "Fire2P3";
                 break;
             case 3:
                 horizontal = "HorizontalP4";
                 vertical = "VerticalP4";
                 fireN = "Fire1P4";
+                fireH = "Fire2P4";
                 break;
             default:
                 break;
