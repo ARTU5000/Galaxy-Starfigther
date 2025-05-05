@@ -10,6 +10,7 @@ public class PlayerObjectPool : MonoBehaviour
     List<GameObject> pool = new List<GameObject>();
 
     public float reset;
+    float timer = 0;
 
     private void Awake()// crea los proyectiles que se utilizarán
     {
@@ -23,6 +24,16 @@ public class PlayerObjectPool : MonoBehaviour
     private void Start()
     {// cada cierto tiempo de desactiva un proyectil para evitar quedarse sin proyectiles
         InvokeRepeating("DeActivate",reset,reset);
+    }
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= reset)
+        {
+            DeActivate();
+            timer = 0;
+        }
     }
 
     public GameObject Spawn()//activa un proyectil del pool y lo asigna

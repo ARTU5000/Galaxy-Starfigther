@@ -65,7 +65,7 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        if (Input.GetAxisRaw(fireH) < 0)//disparo pesado jugador 
+        if (Input.GetAxisRaw(fireH) > 0)//disparo pesado jugador 
         {
             if (Time.time >= p1hsNextShootTime)
             {

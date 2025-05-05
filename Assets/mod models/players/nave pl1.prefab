@@ -168,6 +168,7 @@ MonoBehaviour:
   horizontal: HorizontalP1
   vertical: VerticalP1
   fireN: Fire1P1
+  fireH: 
   tagPlayer: Player
   tagPNS: P1NS
   tagPHS: P1HS
