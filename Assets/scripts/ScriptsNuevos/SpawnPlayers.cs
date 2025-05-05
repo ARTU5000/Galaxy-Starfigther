@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnPlayers : MonoBehaviour
 {
+    public gameManager manager;
+    public CustomizationSpawn customs;
 
     public GameObject playerPrefab; // Prefab del objeto a instanciar
     public int totalPlayers;
@@ -14,6 +16,10 @@ public class SpawnPlayers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<gameManager>();
+        customs = FindObjectOfType<CustomizationSpawn>();
+        totalPlayers = manager.totalPlayers;
+
         for (int i = 0; i < totalPlayers; i++)
         {
             GameObject player = Instantiate(playerPrefab);
