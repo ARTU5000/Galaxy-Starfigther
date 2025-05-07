@@ -15,6 +15,8 @@ public class CustomizationSpawn : MonoBehaviour
 
     List<GameObject> playerPool = new List<GameObject>();
 
+    int[] playerColors;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,16 @@ public class CustomizationSpawn : MonoBehaviour
             if (child.name == coloredPlane)
             {
                 child.GetComponent<Renderer>().material = materials[playerNum];
+            }
+        }
+
+        foreach (Transform child in allChildren)
+        {
+            if (child.name == "Customizator")
+            {
+                child.GetComponent<ShipAndColor>().material = materials[playerNum];
+                child.GetComponent<ShipAndColor>().playerNum = playerNum;
+                break;
             }
         }
     }
