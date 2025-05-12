@@ -13,7 +13,7 @@ public class CustomizationSpawn : MonoBehaviour
 
     public gameManager manager;
 
-    List<GameObject> playerPool = new List<GameObject>();
+    public List<GameObject> playerPool = new List<GameObject>();
 
     int[] playerColors;
 
@@ -167,5 +167,10 @@ public class CustomizationSpawn : MonoBehaviour
                 Debug.Log("One or both measurements are not valid.");
                 break;
         }
+    }
+
+    public void StartGame()
+    {
+
     }
 }

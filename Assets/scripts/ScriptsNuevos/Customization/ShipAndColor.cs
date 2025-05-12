@@ -16,6 +16,7 @@ public class ShipAndColor : MonoBehaviour
     int currentColor;
 
     public int playerNum;
+    public CustomizationSpawn CS;
 
 
     // Start is called before the first frame update
@@ -71,32 +72,12 @@ public class ShipAndColor : MonoBehaviour
         if (currentColor < 0)
             currentColor = colors.Length - 1;
 
-        for (int i = 0; i < materials.Length; i++)
-            if (i != playerNum)
-            {
-                Debug.Log(playerNum);
-                Debug.Log(i);
-                if (materials[i].color == colors[currentColor])
-                    currentColor--;
-            }
-
-        if (currentColor < 0)
-            currentColor = colors.Length - 1;
-
         SetShipColor();
     }
 
     public void colorR()
     {
         currentColor++;
-
-        if (currentColor >= colors.Length)
-            currentColor = 0;
-
-        for (int i = 0; i < materials.Length; i++)
-            if (i != playerNum)
-                if (materials[i].color == colors[currentColor])
-                    currentColor++;
 
         if (currentColor >= colors.Length)
             currentColor = 0;

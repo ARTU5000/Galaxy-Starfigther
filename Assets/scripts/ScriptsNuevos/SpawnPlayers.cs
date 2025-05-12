@@ -26,7 +26,25 @@ public class SpawnPlayers : MonoBehaviour
             player.GetComponent<PlayerInput>().PlayerNum = i;
             GoToStartPosition(totalPlayers, i, player);
             player.GetComponent<PlayerInput>().AssignControllerInputs();
+            GetCustomShip(i, player);
             playerPool.Add(player);
+        }
+
+        customs.gameObject.SetActive(false);
+    }
+
+    public void GetCustomShip(int num, GameObject player)
+    {
+        Transform[] allChildren = customs.playerPool[num].GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in allChildren)
+        {
+            if (child.name == "Modelos")
+            {
+                child.transform.SetParent(player.transform, false);
+                child.localPosition = Vector3.zero;
+                child.rotation = Quaternion.identity;
+                child.localScale = Vector3.one;
+            }
         }
     }
 
