@@ -124,6 +124,7 @@ public class CustomizationSpawn : MonoBehaviour
 
     public void HUDStartPosition(int maxPlayers, int playerNum, Transform selector)
     {
+        selector.position = Vector3.zero;
         float posZ = 1f;
 
         switch ((maxPlayers, playerNum))
