@@ -14,11 +14,12 @@ public class CustomizationSpawn : MonoBehaviour
     public gameManager manager;
 
     public List<GameObject> playerPool = new List<GameObject>();
+    public List<GameObject> playerHudPool = new List<GameObject>();
 
     int[] playerColors;
 
     // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
         manager = FindObjectOfType<gameManager>();
         totalPlayers = manager.totalPlayers;
@@ -46,6 +47,7 @@ public class CustomizationSpawn : MonoBehaviour
         {
             if (child.name == "Customizator")
             {
+                playerHudPool.Add(child.gameObject);
                 child.transform.SetParent(CustomizatorParent.transform, false);
                 HUDStartPosition(totalPlayers, playerNum, child);
             }
@@ -170,8 +172,13 @@ public class CustomizationSpawn : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void ReturnToPlayerNum()
     {
-
+        foreach (var A in playerHudPool)
+            Destroy(A.gameObject);
+        playerHudPool.Clear();
+        foreach (var A in playerPool)
+            Destroy(A.gameObject);
+        playerPool.Clear();
     }
 }
