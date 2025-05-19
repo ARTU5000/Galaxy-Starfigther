@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomizationSpawn : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CustomizationSpawn : MonoBehaviour
 
     public List<GameObject> playerPool = new List<GameObject>();
     public List<GameObject> playerHudPool = new List<GameObject>();
+
+    public Image[] GameHUDColors;
 
     int[] playerColors;
 

@@ -63,6 +63,7 @@ public class ShipAndColor : MonoBehaviour
         color = colors[currentColor];
         imageColor.color = color; 
         material.color = color;
+        CS.GameHUDColors[playerNum].color = color;
     }
 
     public void colorL()

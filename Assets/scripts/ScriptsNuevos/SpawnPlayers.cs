@@ -13,12 +13,15 @@ public class SpawnPlayers : MonoBehaviour
 
     List<GameObject> playerPool = new List<GameObject>();
 
+    public GameObject[] GameHUD;
+
     // Start is called before the first frame update
     void Start()
     {
         manager = FindObjectOfType<gameManager>();
         customs = FindObjectOfType<CustomizationSpawn>();
         totalPlayers = manager.totalPlayers;
+        GameHUD = manager.GameHUD;
 
         for (int i = 0; i < totalPlayers; i++)
         {
@@ -101,7 +104,6 @@ public class SpawnPlayers : MonoBehaviour
         }
     }
     // spawn player
-    // cargar personalización guardada
     // limitar jugadores a 4
     //
 }
