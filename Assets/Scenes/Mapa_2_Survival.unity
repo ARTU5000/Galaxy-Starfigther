@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &155590409
@@ -1647,6 +1647,11 @@ MonoBehaviour:
   - {fileID: 2113223206}
   - {fileID: 1581365293}
   - {fileID: 1920329654}
+  GameHUDColors:
+  - {fileID: 2102051431}
+  - {fileID: 1566587393}
+  - {fileID: 862658211}
+  - {fileID: 1784048061}
 --- !u!1 &322055608
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,7 +10557,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1554026889

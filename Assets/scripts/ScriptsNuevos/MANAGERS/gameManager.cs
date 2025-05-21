@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class gameManager : MonoBehaviour
     public GameObject startStep;
 
     public GameObject[] GameHUD;
+
+    public Image[] GameHUDColors;
 
     public void Awake()
     {

@@ -5,32 +5,58 @@ using UnityEngine.UI;
 
 public class hp1 : MonoBehaviour
 {
-    public Image hp;
-    public Image shield;
+    public Image hp;//
+    public Image shield;//
+    public Image Lives;//
     public float actual_life;
     public float actual_shield;
     private float total_life = 20;
     private float total_shield = 20;
     Rigidbody rb;
 
-    public Text playerships;
-    public int ships;
-    public Text gameOver;
-    public int playernum;
+   // public Text playerships;//
+    public int ships;//
+    //public Text gameOver;//
+    public int playernum;//
     public GameObject fragment;
     public float posx;
-    public GameObject senuelo;
+    //public GameObject senuelo;
+
+    public gameManager manager;
 
     void start()
     {
+        manager = FindObjectOfType<gameManager>();
+        playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
+        //FindHUDObjects();
         actual_life = 20;
         actual_shield = 20;
         rb = GetComponent<Rigidbody>();
         
         ships = 3;
-        playerships.text = ships.ToString();
+        //playerships.text = ships.ToString();
 
     }
+
+    public void FindHUDObjects()
+    {
+        GameObject MyHUD = manager.GameHUD[playernum];
+        GameObject[] allChildren = MyHUD.GetComponentsInChildren<GameObject>(true);
+
+        foreach (GameObject child in allChildren)
+            if (child.name == "hp")
+                hp = child.GetComponent<Image>();
+
+        foreach (GameObject child in allChildren)
+            if (child.name == "shield")
+                shield = child.GetComponent<Image>();
+
+        foreach (GameObject child in allChildren)
+            if (child.name == "nave")
+                Lives = child.GetComponent<Image>();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,17 +74,17 @@ public class hp1 : MonoBehaviour
                 actual_shield = 20;
 
                 ships--;
-                playerships.text = ships.ToString();
-                senuelo.SetActive(false);
+                //playerships.text = ships.ToString();
+                //senuelo.SetActive(false);
             }
             else
             {
                 for(int i = 0; i < 5; i++)
                 Instantiate(fragment, transform.position, Quaternion.identity);
 
-                senuelo.SetActive(true);
+                //senuelo.SetActive(true);
 
-                gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
+                //gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
                 transform.position = new Vector3(posx, -500, -25);
 
                 this.gameObject.SetActive(false);

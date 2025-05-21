@@ -26,6 +26,7 @@ public class CustomizationSpawn : MonoBehaviour
     {
         manager = FindObjectOfType<gameManager>();
         totalPlayers = manager.totalPlayers;
+        GameHUDColors = manager.GameHUDColors;
 
         for (int i = 0; i < totalPlayers; i++)
         {
@@ -75,6 +76,7 @@ public class CustomizationSpawn : MonoBehaviour
             {
                 child.GetComponent<ShipAndColor>().material = materials[playerNum];
                 child.GetComponent<ShipAndColor>().playerNum = playerNum;
+                child.GetComponent<ShipAndColor>().CS = this;
                 break;
             }
         }

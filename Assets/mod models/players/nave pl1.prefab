@@ -324,15 +324,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: {fileID: 0}
   shield: {fileID: 0}
+  Lives: {fileID: 0}
   actual_life: 20
   actual_shield: 20
-  playerships: {fileID: 0}
   ships: 3
-  gameOver: {fileID: 0}
   playernum: 1
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   posx: -80
-  senuelo: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!54 &5138446427806862706
 Rigidbody:
   m_ObjectHideFlags: 0
