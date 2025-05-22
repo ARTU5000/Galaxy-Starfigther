@@ -22,7 +22,7 @@ public class CustomizationSpawn : MonoBehaviour
     int[] playerColors;
 
     // Start is called before the first frame update
-    public void Awake()
+    public void StartCustoms()
     {
         manager = FindObjectOfType<gameManager>();
         totalPlayers = manager.totalPlayers;

@@ -60,4 +60,13 @@ public class gameManager : MonoBehaviour
                 a.SetActive(false);
         }
     }
+
+    public void ActiveHUDs()
+    {
+        foreach (GameObject a in GameHUD)
+            a.SetActive(false);
+
+        for (int i = 0; i < totalPlayers; i++)
+            GameHUD[i].SetActive(true);
+    }
 }
