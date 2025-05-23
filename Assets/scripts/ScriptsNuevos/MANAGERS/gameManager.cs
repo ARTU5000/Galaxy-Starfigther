@@ -56,7 +56,7 @@ public class gameManager : MonoBehaviour
         }
         foreach (GameObject a in StepObjects)
         {
-            if (a == null);
+            if (a != null);
                 a.SetActive(false);
         }
     }
