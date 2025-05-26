@@ -15,7 +15,8 @@ public class hp1 : MonoBehaviour
     Rigidbody rb;
 
    // public Text playerships;//
-    public int ships;//
+    public float ships;//
+    float total_ships;
     //public Text gameOver;//
     public int playernum;//
     public GameObject fragment;
@@ -36,6 +37,7 @@ public class hp1 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         ships = 3;
+        total_ships = 3;
         //playerships.text = ships.ToString();
 
     }
@@ -56,6 +58,7 @@ public class hp1 : MonoBehaviour
         foreach (Transform child in allChildren)
             if (child.name == "nave")
                 Lives = child.GetComponent<Image>();
+        Lives.fillAmount = 0;
         assigned = true;
     }
 
@@ -78,6 +81,11 @@ public class hp1 : MonoBehaviour
                     actual_shield = 20;
 
                     ships--;
+
+                    //Debug.Log((total_ships - ships) / total_ships);
+                    Lives.fillAmount = (total_ships - ships) / total_ships;
+
+
                     //playerships.text = ships.ToString();
                     //senuelo.SetActive(false);
                 }
@@ -128,7 +136,7 @@ public class hp1 : MonoBehaviour
             transform.position = new Vector3(posx, 0, -25);
     }
 
-    public int vidas()
+    public float vidas()
     {
         return ships;
     }
