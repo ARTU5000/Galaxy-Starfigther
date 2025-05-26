@@ -24,11 +24,13 @@ public class hp1 : MonoBehaviour
 
     public gameManager manager;
 
-    void start()
+    bool assigned = false;
+
+    void Start()
     {
         manager = FindObjectOfType<gameManager>();
         playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
-        //FindHUDObjects();
+        FindHUDObjects();
         actual_life = 20;
         actual_shield = 20;
         rb = GetComponent<Rigidbody>();
@@ -40,54 +42,57 @@ public class hp1 : MonoBehaviour
 
     public void FindHUDObjects()
     {
-        GameObject MyHUD = manager.GameHUD[playernum];
-        GameObject[] allChildren = MyHUD.GetComponentsInChildren<GameObject>(true);
+        Transform MyHUD = manager.GameHUD[playernum].transform;
+        Transform[] allChildren = MyHUD.GetComponentsInChildren<Transform>(true);
 
-        foreach (GameObject child in allChildren)
+        foreach (Transform child in allChildren)
             if (child.name == "hp")
                 hp = child.GetComponent<Image>();
 
-        foreach (GameObject child in allChildren)
+        foreach (Transform child in allChildren)
             if (child.name == "shield")
                 shield = child.GetComponent<Image>();
 
-        foreach (GameObject child in allChildren)
+        foreach (Transform child in allChildren)
             if (child.name == "nave")
                 Lives = child.GetComponent<Image>();
-
+        assigned = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        hp.fillAmount = actual_life / total_life;
-        shield.fillAmount = actual_shield / total_shield;
-
-        if (actual_life <= 0)
+        if (assigned)
         {
-            if (ships > 0)
+            hp.fillAmount = actual_life / total_life;
+            shield.fillAmount = actual_shield / total_shield;
+
+            if (actual_life <= 0)
             {
-                for(int i = 0; i < 5; i++)
-                Instantiate(fragment, transform.position, Quaternion.identity);
+                if (ships > 0)
+                {
+                    for (int i = 0; i < 5; i++)
+                        Instantiate(fragment, transform.position, Quaternion.identity);
 
-                actual_life = 20;
-                actual_shield = 20;
+                    actual_life = 20;
+                    actual_shield = 20;
 
-                ships--;
-                //playerships.text = ships.ToString();
-                //senuelo.SetActive(false);
-            }
-            else
-            {
-                for(int i = 0; i < 5; i++)
-                Instantiate(fragment, transform.position, Quaternion.identity);
+                    ships--;
+                    //playerships.text = ships.ToString();
+                    //senuelo.SetActive(false);
+                }
+                else
+                {
+                    for (int i = 0; i < 5; i++)
+                        Instantiate(fragment, transform.position, Quaternion.identity);
 
-                //senuelo.SetActive(true);
+                    //senuelo.SetActive(true);
 
-                //gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
-                transform.position = new Vector3(posx, -500, -25);
+                    //gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
+                    transform.position = new Vector3(posx, -500, -25);
 
-                this.gameObject.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
