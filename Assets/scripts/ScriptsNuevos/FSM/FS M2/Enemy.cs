@@ -113,6 +113,8 @@ public class Enemy : MonoBehaviour
         float distanceToPlayer = float.MaxValue;
         int closest = 0;
 
+        players = GameObject.FindGameObjectsWithTag("Player");//Temporal hasta tener condiciones de victoria y derrota
+
         for (int i = 0; i < players.Length; i++)
         {
             float distanceToPlayerI = Vector3.Distance(players[i].transform.position, agent.transform.position);
