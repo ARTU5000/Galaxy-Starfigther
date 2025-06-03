@@ -29,12 +29,12 @@ public class MainMenu : MonoBehaviour
 
     public void Versus()
     {
-        SceneManager.LoadScene("MenuVersus");
+        //SceneManager.LoadScene("MenuVersus");
     }
 
     public void Survival()
     {
-        SceneManager.LoadScene("MenuSupervivencia");
+        SceneManager.LoadScene("Mapa_2_Survival");
     }
 
      public void exit()
