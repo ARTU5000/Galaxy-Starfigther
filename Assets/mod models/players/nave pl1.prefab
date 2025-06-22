@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 4673057689137299266}
   - component: {fileID: 8055663510116344137}
   - component: {fileID: 1048371196169763632}
+  - component: {fileID: 5053998424889662014}
   m_Layer: 6
   m_Name: nave pl1
   m_TagString: Player
@@ -439,6 +440,18 @@ MonoBehaviour:
   prefab: {fileID: 423078719403144126, guid: bf139e436da38cd429db9d55cbbce514, type: 3}
   initialSize: 10
   reset: 1
+--- !u!114 &5053998424889662014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab909be89fee8e44e9eb0459a42c1895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0
