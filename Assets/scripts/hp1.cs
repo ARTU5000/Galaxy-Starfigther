@@ -16,7 +16,7 @@ public class hp1 : MonoBehaviour
 
    // public Text playerships;//
     public float ships;//
-    float total_ships;
+    public float total_ships;
     //public Text gameOver;//
     public int playernum;//
     public GameObject fragment;
@@ -33,7 +33,7 @@ public class hp1 : MonoBehaviour
         playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
         FindHUDObjects();
         actual_life = 20;
-        actual_shield = 20;
+        actual_shield = 0;
         rb = GetComponent<Rigidbody>();
         
         ships = 3;
@@ -78,7 +78,7 @@ public class hp1 : MonoBehaviour
                         Instantiate(fragment, transform.position, Quaternion.identity);
 
                     actual_life = 20;
-                    actual_shield = 20;
+                    actual_shield = 0;
 
                     ships--;
 
