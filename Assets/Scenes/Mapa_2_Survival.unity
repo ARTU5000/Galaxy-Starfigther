@@ -1471,11 +1471,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.18632075, g: 0.37947366, b: 0.745283, a: 0.6313726}
-    m_PressedColor: {r: 0.19081523, g: 0.6037736, b: 0.53963226, a: 0.7019608}
+    m_NormalColor: {r: 0, g: 0.6727629, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.45932567, b: 0.5660378, a: 1}
+    m_PressedColor: {r: 0.25618547, g: 0.5377358, b: 0.44177613, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1554,6 +1554,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_Custom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &229587970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16180134, g: 0.20321383, b: 0.33962262, a: 0.57254905}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1602,6 +1614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274008546}
   - component: {fileID: 274008547}
+  - component: {fileID: 274008548}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1657,6 +1670,22 @@ MonoBehaviour:
   - {fileID: 1566587393}
   - {fileID: 862658211}
   - {fileID: 1784048061}
+--- !u!114 &274008548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274008545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfb286aabb3daa41b07a1e8d73882bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonInicialNuevo:
+  - {fileID: 2028651992}
+  - {fileID: 2083938509}
+  - {fileID: 1898144702}
 --- !u!1 &322055608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,11 +1892,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.18632075, g: 0.37947366, b: 0.745283, a: 0.6313726}
-    m_PressedColor: {r: 0.19081523, g: 0.6037736, b: 0.53963226, a: 0.7019608}
+    m_NormalColor: {r: 0, g: 0.6727629, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.45932567, b: 0.5660378, a: 1}
+    m_PressedColor: {r: 0.25618547, g: 0.5377358, b: 0.44177613, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1946,6 +1975,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_Custom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &324803359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1959,7 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16180134, g: 0.20321383, b: 0.33962262, a: 0.57254905}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2404,7 +2445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 1}
+  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3629,7 +3670,7 @@ GameObject:
   - component: {fileID: 484894237}
   - component: {fileID: 484894240}
   - component: {fileID: 484894241}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3802,6 +3843,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8383124558419344257, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -8347221205978777541, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3818,10 +3867,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.85
       objectReference: {fileID: 0}
+    - target: {fileID: -7677471772335586173, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -7252206974635170655, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8c9cbd6a4c7deb4985cf2699a293a8c, type: 2}
+    - target: {fileID: -6064153176478479626, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -5843695826044790269, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.85
@@ -3854,6 +3911,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d5f4882b8ffc63a4bb2647a6eed841e8, type: 2}
+    - target: {fileID: -4636300777304409883, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -4096120871940991593, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -3878,6 +3939,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.85
       objectReference: {fileID: 0}
+    - target: {fileID: -3798597711559607027, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -3542852092398272455, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1
@@ -3889,6 +3954,18 @@ PrefabInstance:
     - target: {fileID: -3542852092398272455, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -3477458294799913631, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -3215555783603854218, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -2932998491564163895, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -1858088320818141857, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3914,10 +3991,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.85
       objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: -678588488315902003, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d5f4882b8ffc63a4bb2647a6eed841e8, type: 2}
+    - target: {fileID: -516098083770646512, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 122608338434328296, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3938,10 +4023,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: item
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1541998606474349963, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8c9cbd6a4c7deb4985cf2699a293a8c, type: 2}
+    - target: {fileID: 3291190919447392298, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.04
@@ -3953,6 +4046,10 @@ PrefabInstance:
     - target: {fileID: 4083501151425157549, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5021228346462164004, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4002,6 +4099,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.53
       objectReference: {fileID: 0}
+    - target: {fileID: 5914173764048766335, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4026,10 +4127,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8c9cbd6a4c7deb4985cf2699a293a8c, type: 2}
+    - target: {fileID: 7833249854982934595, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8100320773420232829, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16ea49f6eda6d854190c1d7a5f827554, type: 2}
+    - target: {fileID: 8416272007918961125, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8632055958874330854, guid: e2db7e397865d584ca9d7c43acde692c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -5036,7 +5145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 645368698}
   - component: {fileID: 645368699}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5632,7 +5741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 1}
+  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7105,7 +7214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 1}
+  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8382,11 +8491,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.18632075, g: 0.37947366, b: 0.745283, a: 0.6313726}
-    m_PressedColor: {r: 0.19081523, g: 0.6037736, b: 0.53963226, a: 0.7019608}
+    m_NormalColor: {r: 0, g: 0.6727629, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.45932567, b: 0.5660378, a: 1}
+    m_PressedColor: {r: 0.25618547, g: 0.5377358, b: 0.44177613, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -8465,6 +8574,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_Custom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1220922083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8478,7 +8599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16180134, g: 0.20321383, b: 0.33962262, a: 0.57254905}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10492,7 +10613,7 @@ GameObject:
   - component: {fileID: 1497986355}
   - component: {fileID: 1497986354}
   - component: {fileID: 1497986353}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10955,7 +11076,7 @@ GameObject:
   - component: {fileID: 1519293703}
   - component: {fileID: 1519293705}
   - component: {fileID: 1519293704}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12255,6 +12376,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_PlayerNum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1757897983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12624,7 +12757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 1}
+  m_Color: {r: 0, g: 0.69803923, b: 0.9686275, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12920,6 +13053,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_PlayerNum
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13788,7 +13933,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -13804,7 +13949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2028651992}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1995858654
@@ -14254,11 +14399,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.18632075, g: 0.37947366, b: 0.745283, a: 0.6313726}
-    m_PressedColor: {r: 0.19081523, g: 0.6037736, b: 0.53963226, a: 0.7019608}
+    m_NormalColor: {r: 0, g: 0.6727629, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.45932567, b: 0.5660378, a: 1}
+    m_PressedColor: {r: 0.25618547, g: 0.5377358, b: 0.44177613, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -14337,6 +14482,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 274008548}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: BHUD_Custom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2083938512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14350,7 +14507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16180134, g: 0.20321383, b: 0.33962262, a: 0.57254905}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14568,8 +14725,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1722602144}
   - {fileID: 111448415}
-  - {fileID: 1975434117}
   - {fileID: 1995858654}
+  - {fileID: 1975434117}
   - {fileID: 212618011}
   - {fileID: 1208300284}
   - {fileID: 1536721469}
