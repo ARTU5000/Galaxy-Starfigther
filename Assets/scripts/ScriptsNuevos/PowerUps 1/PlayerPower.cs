@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPower : MonoBehaviour
 {
     public hp1 hpScript;
     int powerNum;
+    int playernum;
+    public Image image;
+    public Sprite[] Types;
+    public gameManager manager;
+    private bool isRolling = false;
+    public bool hasPower = false;
+
+    public float duration = 5f;
+    public float changeRate = 0.2f;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<gameManager>();
+        playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
         hpScript = this.GetComponent<hp1>();
+        GetHudRef();
+        image.sprite = Types[0];
     }
 
     // Update is called once per frame
@@ -24,11 +38,78 @@ public class PlayerPower : MonoBehaviour
         if (other.gameObject.layer == 16)
         {
             powerNum = Random.Range(0, 10);
-            getPower();
+            RandomAnim();
         }
     }
 
+    public void RandomAnim()
+    {
+        if (!isRolling)
+            StartCoroutine(RouletteCoroutine());
+    }
+
+    private IEnumerator RouletteCoroutine()
+    {
+        isRolling = true;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            int index = Random.Range(1, Types.Length);
+            image.sprite = Types[index];
+            yield return new WaitForSeconds(changeRate);
+            elapsed += changeRate;
+        }
+
+        getPower();
+
+        hasPower = true;
+
+        isRolling = false;
+    }
+
+    public void GetHudRef()
+    {
+        Transform MyHUD = manager.GameHUD[playernum].transform;
+        Transform[] allChildren = MyHUD.GetComponentsInChildren<Transform>(true);
+
+        foreach (Transform child in allChildren)
+            if (child.name == "ImagePowerUp")
+                image = child.GetComponent<Image>();
+    }
     public void getPower()
+    {
+        switch (powerNum)
+        {
+            case 0:
+            case 1:
+            case 2:
+                image.sprite = Types[2];
+                break;
+            case 3:
+            case 4:
+            case 5:
+                image.sprite = Types[3];
+                break;
+            case 6:
+            case 7:
+            case 8:
+                image.sprite = Types[1];
+                break;
+            case 9:
+                if (hpScript.total_ships > hpScript.ships)
+                    hpScript.ships++;
+                break;
+            default:
+                if (hpScript.actual_life <= 15)
+                    image.sprite = Types[4];
+                else
+                    image.sprite = Types[3];
+                break;
+        }
+    }
+
+    public void UsePower()
     {
         switch (powerNum)
         {
@@ -51,8 +132,10 @@ public class PlayerPower : MonoBehaviour
                 hpScript.actual_shield = 20;
                 break;
             case 9:
-                if (hpScript.total_ships > hpScript.total_ships)
+                if (hpScript.total_ships > hpScript.ships)
                     hpScript.ships++;
+                else
+                    hpScript.actual_life = 20;
                 break;
             default:
                 if (hpScript.actual_life <= 15)
@@ -61,5 +144,8 @@ public class PlayerPower : MonoBehaviour
                     hpScript.actual_life = 20;
                 break;
         }
+
+        hasPower = false;
+        image.sprite = Types[0];
     }
 }

@@ -27,6 +27,7 @@ public class PlayerInput : MonoBehaviour
     public string vertical;
     public string fireN;
     public string fireH;
+    public string fireP;
 
     //textos de busqueda
     public string tagPlayer;
@@ -36,8 +37,12 @@ public class PlayerInput : MonoBehaviour
     //numero de jugador
     public int PlayerNum;
 
+    //script power up
+    PlayerPower PPower;
+
     private void Awake()
     {
+        PPower = this.GetComponent<PlayerPower>();
     }
 
     void Update()
@@ -75,6 +80,10 @@ public class PlayerInput : MonoBehaviour
                 p1hsNextShootTime = Time.time + hsCooldown;
             }
         }
+        if (Input.GetAxisRaw(fireP) > 0 && PPower.hasPower)//uso de PowerUp
+        {
+            PPower.UsePower();
+        }
     }
 
     public void AssignControllerInputs()
@@ -86,24 +95,28 @@ public class PlayerInput : MonoBehaviour
                 vertical = "VerticalP1";
                 fireN = "Fire1P1";
                 fireH = "Fire2P1";
+                fireP = "PowerP1";
                 break;
             case 1:
                 horizontal = "HorizontalP2";
                 vertical = "VerticalP2";
                 fireN = "Fire1P2";
                 fireH = "Fire2P2";
+                fireP = "PowerP2";
                 break;
             case 2:
                 horizontal = "HorizontalP3";
                 vertical = "VerticalP3";
                 fireN = "Fire1P3";
                 fireH = "Fire2P3";
+                fireP = "PowerP3";
                 break;
             case 3:
                 horizontal = "HorizontalP4";
                 vertical = "VerticalP4";
                 fireN = "Fire1P4";
                 fireH = "Fire2P4";
+                fireP = "PowerP4";
                 break;
             default:
                 break;

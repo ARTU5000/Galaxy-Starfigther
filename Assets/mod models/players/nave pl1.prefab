@@ -329,6 +329,7 @@ MonoBehaviour:
   actual_life: 20
   actual_shield: 20
   ships: 3
+  total_ships: 0
   playernum: 1
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   posx: -80
@@ -452,6 +453,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab909be89fee8e44e9eb0459a42c1895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpScript: {fileID: 5138446427806862711}
+  image: {fileID: 0}
+  Types:
+  - {fileID: 21300000, guid: 3fd7575be58f76143a489d4bb6750a8e, type: 3}
+  - {fileID: 21300000, guid: d7f0ac76dd87c6146831b5e23feb8c67, type: 3}
+  - {fileID: 21300000, guid: ef5ba4937ff5afd4581bbf98ea8122b1, type: 3}
+  - {fileID: 21300000, guid: d3b0b066c0260f84aacf1a66a53df39d, type: 3}
+  - {fileID: 21300000, guid: 8105aa6b82d358740bdb5a791e8cd49d, type: 3}
+  manager: {fileID: 0}
+  duration: 5
+  changeRate: 0.2
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0
