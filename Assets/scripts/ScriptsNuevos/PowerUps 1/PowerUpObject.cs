@@ -9,11 +9,14 @@ public class PowerUpObject : MonoBehaviour
     public NavMeshAgent agent;
 
     private Vector3 walkpoint;
-    
+
+    public bool used;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        used = false;
     }
 
     // Update is called once per frame
@@ -25,6 +28,9 @@ public class PowerUpObject : MonoBehaviour
         }
 
         agent.SetDestination(walkpoint);
+
+        if (used)
+        Destroy(gameObject, 100);
     }
 
     private void SetWalkPoint()// busca coordenadas a donde dirijirse

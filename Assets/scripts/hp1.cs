@@ -136,8 +136,9 @@ public class hp1 : MonoBehaviour
             transform.position = new Vector3(posx, 0, -25);
     }
 
-    public float vidas()
+    public void masVidas()
     {
-        return ships;
+        ships++;
+        Lives.fillAmount = (total_ships - ships) / total_ships;
     }
 }

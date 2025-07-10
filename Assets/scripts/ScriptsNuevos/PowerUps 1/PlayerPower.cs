@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class PlayerPower : MonoBehaviour
 {
     public hp1 hpScript;
-    int powerNum;
+    public int powerNum;
     int playernum;
     public Image image;
     public Sprite[] Types;
     public gameManager manager;
-    private bool isRolling = false;
-    public bool hasPower = false;
+    private bool isRolling;
+    public bool hasPower;
 
     public float duration = 5f;
     public float changeRate = 0.2f;
@@ -25,6 +25,8 @@ public class PlayerPower : MonoBehaviour
         hpScript = this.GetComponent<hp1>();
         GetHudRef();
         image.sprite = Types[0];
+        hasPower = false;
+        isRolling = false;
     }
 
     // Update is called once per frame
@@ -35,15 +37,25 @@ public class PlayerPower : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 16)
+        if (other.gameObject.layer == 16 && !hasPower)
         {
             powerNum = Random.Range(0, 10);
             RandomAnim();
+            PowerUpObject power = other.gameObject.GetComponent<PowerUpObject>();
+        if (power != null)
+        {
+            power.used = true;
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el componente PowerUpObject en " + other.gameObject.name);
+        }
         }
     }
 
     public void RandomAnim()
     {
+        hasPower = true;
         if (!isRolling)
             StartCoroutine(RouletteCoroutine());
     }
@@ -62,8 +74,6 @@ public class PlayerPower : MonoBehaviour
         }
 
         getPower();
-
-        hasPower = true;
 
         isRolling = false;
     }
@@ -97,14 +107,10 @@ public class PlayerPower : MonoBehaviour
                 image.sprite = Types[1];
                 break;
             case 9:
-                if (hpScript.total_ships > hpScript.ships)
-                    hpScript.ships++;
+                image.sprite = Types[4];
                 break;
             default:
-                if (hpScript.actual_life <= 15)
-                    image.sprite = Types[4];
-                else
-                    image.sprite = Types[3];
+                image.sprite = Types[2];
                 break;
         }
     }
@@ -116,7 +122,7 @@ public class PlayerPower : MonoBehaviour
             case 0:
             case 1:
             case 2:
-                if (hpScript.actual_life <= 15)
+                if (hpScript.actual_life <= 15 && !isRolling)
                     hpScript.actual_life += 5;
                 else
                     hpScript.actual_life = 20;
@@ -124,23 +130,23 @@ public class PlayerPower : MonoBehaviour
             case 3:
             case 4:
             case 5:
-                hpScript.actual_life = 20;
+                if (!isRolling)
+                    hpScript.actual_life = 20;
                 break;
             case 6:
             case 7:
             case 8:
-                hpScript.actual_shield = 20;
+                if (!isRolling)
+                    hpScript.actual_shield = 20;
                 break;
             case 9:
-                if (hpScript.total_ships > hpScript.ships)
-                    hpScript.ships++;
-                else
-                    hpScript.actual_life = 20;
+                if (!isRolling)
+                    hpScript.masVidas();
                 break;
             default:
-                if (hpScript.actual_life <= 15)
+                if (hpScript.actual_life <= 15 && !isRolling)
                     hpScript.actual_life += 5;
-                else
+                else if (!isRolling)
                     hpScript.actual_life = 20;
                 break;
         }

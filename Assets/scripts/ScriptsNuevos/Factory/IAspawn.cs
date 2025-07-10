@@ -6,6 +6,7 @@ public class IASpawn : MonoBehaviour
 {
     public GameObject IAship;
     public float spawnInterval;
+    public int spawnQuantity;
     private float nextSpawnTime;
     private bool canSpawn;
 
@@ -22,7 +23,7 @@ public class IASpawn : MonoBehaviour
     {
         if (canSpawn && Time.time >= nextSpawnTime)
         {
-            SpawnShips(4); // Genera 4 naves en cada activación
+            SpawnShips(spawnQuantity);
             canSpawn = false;
         }
         else if (!canSpawn)
