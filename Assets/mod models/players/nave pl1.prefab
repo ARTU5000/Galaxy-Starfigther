@@ -407,10 +407,12 @@ MonoBehaviour:
   vertical: VerticalP1
   fireN: Fire1P1
   fireH: 
+  fireP: 
   tagPlayer: Player
   tagPNS: P1NS
   tagPHS: P1HS
   PlayerNum: 0
+  PPower: {fileID: 5053998424889662014}
 --- !u!114 &8055663510116344137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpScript: {fileID: 5138446427806862711}
+  powerNum: 0
   image: {fileID: 0}
   Types:
   - {fileID: 21300000, guid: 3fd7575be58f76143a489d4bb6750a8e, type: 3}
@@ -462,8 +465,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d3b0b066c0260f84aacf1a66a53df39d, type: 3}
   - {fileID: 21300000, guid: 8105aa6b82d358740bdb5a791e8cd49d, type: 3}
   manager: {fileID: 0}
-  duration: 5
-  changeRate: 0.2
+  hasPower: 0
+  duration: 2
+  changeRate: 0.1
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0

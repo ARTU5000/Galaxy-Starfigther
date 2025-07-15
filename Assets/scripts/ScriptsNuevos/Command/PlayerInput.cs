@@ -38,11 +38,11 @@ public class PlayerInput : MonoBehaviour
     public int PlayerNum;
 
     //script power up
-    PlayerPower PPower;
+    public PlayerPower PPower;
 
     private void Awake()
     {
-        PPower = this.GetComponent<PlayerPower>();
+        //PPower = this.GetComponent<PlayerPower>();
     }
 
     void Update()
@@ -80,9 +80,14 @@ public class PlayerInput : MonoBehaviour
                 p1hsNextShootTime = Time.time + hsCooldown;
             }
         }
+
+        if (Input.GetAxisRaw(fireP) > 0)
+        { Debug.Log("AAA"); }
+
         if (Input.GetAxisRaw(fireP) > 0 && PPower.hasPower)//uso de PowerUp
         {
-            PPower.UsePower();
+            PPower.UsePower(PlayerNum);
+            Debug.Log(PlayerNum);
         }
     }
 

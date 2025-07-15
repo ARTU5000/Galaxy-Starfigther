@@ -28,9 +28,6 @@ public class PowerUpObject : MonoBehaviour
         }
 
         agent.SetDestination(walkpoint);
-
-        if (used)
-        Destroy(gameObject, 100);
     }
 
     private void SetWalkPoint()// busca coordenadas a donde dirijirse
@@ -38,5 +35,13 @@ public class PowerUpObject : MonoBehaviour
         float randomX = Random.Range(-140, 140);
         float randomZ = Random.Range(-95, 60);
         walkpoint = new Vector3(randomX, transform.position.y, randomZ);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

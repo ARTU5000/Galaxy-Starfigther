@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IAship: {fileID: 6486163687078090550, guid: cba64e740fcad9a4da6fd38c758e33cc, type: 3}
-  spawnInterval: 1
+  spawnInterval: 10
   spawnQuantity: 1
 --- !u!1 &187851949
 GameObject:

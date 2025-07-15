@@ -41,15 +41,7 @@ public class PlayerPower : MonoBehaviour
         {
             powerNum = Random.Range(0, 10);
             RandomAnim();
-            PowerUpObject power = other.gameObject.GetComponent<PowerUpObject>();
-        if (power != null)
-        {
-            power.used = true;
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró el componente PowerUpObject en " + other.gameObject.name);
-        }
+            Destroy(other.gameObject);
         }
     }
 
@@ -115,7 +107,7 @@ public class PlayerPower : MonoBehaviour
         }
     }
 
-    public void UsePower()
+    public void UsePower(int playerNum)
     {
         switch (powerNum)
         {
@@ -124,7 +116,7 @@ public class PlayerPower : MonoBehaviour
             case 2:
                 if (hpScript.actual_life <= 15 && !isRolling)
                     hpScript.actual_life += 5;
-                else
+                else if (!isRolling)
                     hpScript.actual_life = 20;
                 break;
             case 3:
