@@ -518,7 +518,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 10
-  totalInGroup: 4
+  totalInGroup: 5
   y: 3.6
   z: -105
 --- !u!114 &90019619
@@ -5783,7 +5783,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 11
-  totalInGroup: 4
+  totalInGroup: 5
   y: 3.6
   z: 70
 --- !u!1 &836917211
@@ -6176,7 +6176,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 7
-  totalInGroup: 4
+  totalInGroup: 5
   y: 3.6
   z: 70
 --- !u!1 &920755036
@@ -11095,7 +11095,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 4
-  totalInGroup: 0
+  totalInGroup: 5
   y: 3.6
   z: 70
 --- !u!1001 &1513722249
@@ -12824,7 +12824,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 4
-  totalInGroup: 4
+  totalInGroup: 5
   y: 3.6
   z: -105
 --- !u!114 &1785807666
@@ -13049,7 +13049,7 @@ MonoBehaviour:
   x1: -160
   x2: 160
   spawn: 7
-  totalInGroup: 4
+  totalInGroup: 5
   y: 3.6
   z: -105
 --- !u!114 &1885906220
@@ -14430,8 +14430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IAship: {fileID: 694377003703608974, guid: 36999cb86cdb84c43a728adebf703ba6, type: 3}
-  spawnInterval: 10
-  spawnQuantity: 4
+  spawnInterval: 5
+  spawnQuantity: 5
 --- !u!1 &2075382544
 GameObject:
   m_ObjectHideFlags: 0

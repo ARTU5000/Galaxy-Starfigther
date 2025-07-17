@@ -466,8 +466,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8105aa6b82d358740bdb5a791e8cd49d, type: 3}
   manager: {fileID: 0}
   hasPower: 0
-  duration: 2
-  changeRate: 0.1
+  duration: 1
+  changeRate: 0.05
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0
