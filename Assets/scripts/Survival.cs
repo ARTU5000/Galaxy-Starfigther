@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class Survival : MonoBehaviour
@@ -14,12 +15,16 @@ public class Survival : MonoBehaviour
 
     public Text estadopartida;
     public Text instructions;
+    public GameObject InvButton;
+
+    public GameObject PauseObj;
 
     private bool pause;
     // Start is called before the first frame update
     void Start()
     {
         pause = false;
+        instructions.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,43 +38,56 @@ public class Survival : MonoBehaviour
 
     void Perder()
     {
-        if (gameOver1.activeSelf && gameOver2.activeSelf)
+        if (gameOver1.activeSelf && gameOver2.activeSelf&& pause == false)
         {
+            instructions.gameObject.SetActive(true);
+
             pause = true;
             Time.timeScale = 0f;
             estadopartida.text = "DERROTA!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
             Final();
         }
     }
 
     void Ganar()
     {
-        if (timr >= 120)
+        if (timr >= 12&& pause == false)
         {
+            instructions.gameObject.SetActive(true);
+
             pause = true;
             Time.timeScale = 0f;
             estadopartida.text = "VICTORIA!";
-            instructions.text = "oprime R para repetir patrida                oprime M para regresar al menu";
             Final();
         }
     }
 
     void Final()
     {
-        if (Input.GetKey(KeyCode.R) && pause == true)
-        {
+        PauseObj.SetActive(false);
 
+        EventSystem.current.SetSelectedGameObject(null);
+
+        EventSystem.current.SetSelectedGameObject(InvButton);
+    }
+
+    public void Reload()
+    {
+        if (pause == true)
+        {
             pause = false;
             Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (Input.GetKey(KeyCode.M) && pause == true)
-        {
+    }
 
+    public void MainMenu()
+    {
+        if (pause == true)
+        {
             pause = false;
             Time.timeScale = 1f;
-            SceneManager.LoadScene("MenuSupervivencia");
+            SceneManager.LoadScene("Menu");
         }
     }
 }
