@@ -310,6 +310,7 @@ MonoBehaviour:
   instructions: {fileID: 1410499632}
   InvButton: {fileID: 773454935}
   PauseObj: {fileID: 521383308}
+  Players: []
 --- !u!4 &66547839
 Transform:
   m_ObjectHideFlags: 0
@@ -7631,6 +7632,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 5138446427806862713, guid: c04b2d9e5ac44c74cb5f57c053eca117, type: 3}
   totalPlayers: 4
   GameHUD: []
+  ruleManager: {fileID: 66547838}
 --- !u!1 &1102309222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9210,7 +9212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1307729632
 Transform:
   m_ObjectHideFlags: 0
@@ -9220,7 +9222,7 @@ Transform:
   m_GameObject: {fileID: 1307729631}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 538, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -19,10 +19,15 @@ public class Survival : MonoBehaviour
 
     public GameObject PauseObj;
 
+    public List<GameObject> Players = new List<GameObject>();
+
+    bool allDown;
+
     private bool pause;
     // Start is called before the first frame update
     void Start()
     {
+        allDown = false;
         pause = false;
         instructions.gameObject.SetActive(false);
     }
@@ -38,7 +43,19 @@ public class Survival : MonoBehaviour
 
     void Perder()
     {
-        if (gameOver1.activeSelf && gameOver2.activeSelf&& pause == false)
+        foreach (GameObject p in Players)
+        {
+            if (p.activeSelf)
+            {
+                allDown = false; break;
+            }
+            else
+            {
+                allDown = true;
+            }
+        }
+        
+        if (allDown == true && pause == false)
         {
             instructions.gameObject.SetActive(true);
 
@@ -51,7 +68,7 @@ public class Survival : MonoBehaviour
 
     void Ganar()
     {
-        if (timr >= 12&& pause == false)
+        if (timr >= 120 && pause == false)
         {
             instructions.gameObject.SetActive(true);
 

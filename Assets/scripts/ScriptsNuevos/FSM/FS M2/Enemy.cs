@@ -59,8 +59,11 @@ public class Enemy : MonoBehaviour
         {
             target = GetClosestPlayer();
 
-            agent.SetDestination(target.position);
-            transform.LookAt(target.position);   
+            if (target != null)
+            {
+                agent.SetDestination(target.position);
+                transform.LookAt(target.position);
+            }
         }
         else if (machine.currentState == EStates.Attack)
         {
@@ -104,17 +107,17 @@ public class Enemy : MonoBehaviour
         walkpoint = new Vector3(randomX, transform.position.y, randomZ);
     }
     public Transform GetClosestPlayer()// busca coordenadas a donde dirijirse
-    {/*
-        float distanceToPlayer1 = Vector3.Distance(player1.position, agent.transform.position);
-        float distanceToPlayer2 = Vector3.Distance(player2.position, agent.transform.position);
-
-        return distanceToPlayer1 < distanceToPlayer2 ? player1 : player2;*/
+    {
 
         float distanceToPlayer = float.MaxValue;
         int closest = 0;
 
         players = GameObject.FindGameObjectsWithTag("Player");//Temporal hasta tener condiciones de victoria y derrota
 
+        // Verifica si hay jugadores
+        if (players.Length == 0)
+            return null;
+    
         for (int i = 0; i < players.Length; i++)
         {
             float distanceToPlayerI = Vector3.Distance(players[i].transform.position, agent.transform.position);
