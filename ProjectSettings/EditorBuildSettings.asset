@@ -15,46 +15,46 @@ EditorBuildSettings:
     path: Assets/Scenes/Creditos.unity
     guid: dd082653077c4af4086a42f2fcc67020
   - enabled: 1
-    path: Assets/Scenes/MenuSupervivencia.unity
+    path: Assets/Scenes/Descartados/MenuSupervivencia.unity
     guid: bd4a508abfce2ce4ba6c112b7f712dcd
   - enabled: 1
-    path: Assets/Scenes/Mapa_1_Survival.unity
+    path: Assets/Scenes/Descartados/Mapa_1_Survival.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Mapa_2_Survival.unity
     guid: 8fd24602871d62b4eb60f5660be63b5d
   - enabled: 1
-    path: Assets/Scenes/Mapa_3_Survival.unity
+    path: Assets/Scenes/Descartados/Mapa_3_Survival.unity
     guid: bd83de63034898549ac991b5c4c92b18
   - enabled: 1
-    path: Assets/Scenes/Mapa_4_Survival.unity
+    path: Assets/Scenes/Descartados/Mapa_4_Survival.unity
     guid: a04bf3d25d833bd4d849df4ae98e85f7
   - enabled: 1
-    path: Assets/Scenes/Mapa_5_Survival.unity
+    path: Assets/Scenes/Descartados/Mapa_5_Survival.unity
     guid: 6626712586539024587b9ac6b63de4a1
   - enabled: 1
-    path: Assets/Scenes/Mapa_6_Survival.unity
+    path: Assets/Scenes/Descartados/Mapa_6_Survival.unity
     guid: d834d6fd144ac9748bc8476398651522
   - enabled: 1
-    path: Assets/Scenes/MenuVersus.unity
+    path: Assets/Scenes/Descartados/MenuVersus.unity
     guid: c3364e23b3560b048b237f773b062644
   - enabled: 1
-    path: Assets/Scenes/Mapa_1_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_1_Versus.unity
     guid: a3a2b1a532c5e384b87db2d53282e9b6
   - enabled: 1
-    path: Assets/Scenes/Mapa_2_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_2_Versus.unity
     guid: 1cba7c9e3661e1d44a97d4b423399647
   - enabled: 1
-    path: Assets/Scenes/Mapa_3_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_3_Versus.unity
     guid: 55217f542bd5dc14e8ce61bcb83147e5
   - enabled: 1
-    path: Assets/Scenes/Mapa_4_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_4_Versus.unity
     guid: 6d30ab004608ea648a768366a87516f6
   - enabled: 1
-    path: Assets/Scenes/Mapa_5_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_5_Versus.unity
     guid: b50d59ab2607f034fa970892fe975598
   - enabled: 1
-    path: Assets/Scenes/Mapa_6_Versus.unity
+    path: Assets/Scenes/Descartados/Mapa_6_Versus.unity
     guid: e19c414520611294d80453eddf3e3bfb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 49d8847e2f7239d479634e64abdd3a3e, type: 2}
