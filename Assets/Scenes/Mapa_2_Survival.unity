@@ -1764,6 +1764,7 @@ GameObject:
   - component: {fileID: 274008546}
   - component: {fileID: 274008547}
   - component: {fileID: 274008548}
+  - component: {fileID: 274008549}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1835,6 +1836,29 @@ MonoBehaviour:
   - {fileID: 2028651992}
   - {fileID: 2083938509}
   - {fileID: 1898144702}
+--- !u!114 &274008549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274008545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91b132df8f6c1a46b8334abe32975ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totatPointer: 0
+  Players: []
+  Pointer: 
+  totalEnemiesDown: 0
+  enemiesTypesNum: 0
+  totalEnemyOfTypeDown: 
+  enemiesToSpawn: 
+  dificultyMultiplier: 0
+  dificulty: 0
+  asteroidsDestroyed: 0
+  asteroidSpawnMultiplier: 0
 --- !u!1 &322055608
 GameObject:
   m_ObjectHideFlags: 0
@@ -7633,6 +7657,7 @@ MonoBehaviour:
   totalPlayers: 4
   GameHUD: []
   ruleManager: {fileID: 66547838}
+  dataManager: {fileID: 0}
 --- !u!1 &1102309222
 GameObject:
   m_ObjectHideFlags: 0

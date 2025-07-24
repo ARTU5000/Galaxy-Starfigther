@@ -16,6 +16,7 @@ public class SpawnPlayers : MonoBehaviour
     public GameObject[] GameHUD;
 
     public Survival ruleManager;
+    public DataManager dataManager;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class SpawnPlayers : MonoBehaviour
             GetCustomShip(i, player);
             playerPool.Add(player);
             ruleManager.Players.Add(player);
+            dataManager.Players.Add(player);
         }
 
         customs.gameObject.SetActive(false);
