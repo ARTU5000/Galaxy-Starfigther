@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    public void PlayAudioClip(AudioClip clip, float volume = 1f)
+    public void PlayAudioClip(AudioClip clip, float volume = .2f)
     {
         audioSource.clip = clip;
         audioSource.volume = volume;
