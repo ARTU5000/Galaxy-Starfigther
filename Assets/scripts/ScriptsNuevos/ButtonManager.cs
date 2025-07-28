@@ -33,4 +33,13 @@ public class ButtonManager : MonoBehaviour
         // Establece el nuevo botón como seleccionado
         EventSystem.current.SetSelectedGameObject(botonInicialNuevo[2]);
     }
+
+    public void BHUD_Settings()
+    {
+        // Limpia cualquier selección actual
+        EventSystem.current.SetSelectedGameObject(null);
+
+        // Establece el nuevo botón como seleccionado
+        EventSystem.current.SetSelectedGameObject(botonInicialNuevo[3]);
+    }
 }

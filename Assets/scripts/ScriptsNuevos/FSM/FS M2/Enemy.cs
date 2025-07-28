@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
     public Transform target;
     private Vector3 walkpoint;
 
+    public int Type;
+    public DataManager dataManager;
+
     private void Awake()
     {
         ObjectPool = GetComponent<PlayerObjectPool>();
@@ -36,6 +39,7 @@ public class Enemy : MonoBehaviour
         //player2 = GameObject.FindWithTag("Player2").transform;// asigna la ubicacion del jugador 2
 
         players = GameObject.FindGameObjectsWithTag("Player");
+        dataManager = GameObject.FindObjectOfType<DataManager>();
 
         machine.setIA(this);
     }
@@ -90,6 +94,10 @@ public class Enemy : MonoBehaviour
                 GameObject.Instantiate(fragment, transform.position, Quaternion.identity);
             }
 
+            dataManager.totalEnemyOfTypeDown[Type]++;
+            dataManager.totalEnemiesDown++;
+            dataManager.totalPoint += 100 * (Type + 1);
+            
             ObjectPool.DestroyAll();
             GameObject.Destroy(gameObject);
         }

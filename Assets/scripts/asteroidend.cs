@@ -40,8 +40,10 @@ public class asteroidend : MonoBehaviour
             final = true;
         else if (collision.gameObject.CompareTag("Asteroid") && contador < 6)
             contador++;
-        else 
+        else
+        {
             final = true;
+        }
     }
 
 }

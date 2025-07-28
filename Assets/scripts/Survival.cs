@@ -23,13 +23,21 @@ public class Survival : MonoBehaviour
 
     bool allDown;
 
+    public int timeToPlay;
+
     private bool pause;
+
+    
+    public DataManager dataManager;
     // Start is called before the first frame update
     void Start()
     {
         allDown = false;
         pause = false;
         instructions.gameObject.SetActive(false);
+
+        dataManager = GameObject.FindObjectOfType<DataManager>();
+        timeToPlay = dataManager.maxPlayTime;
     }
 
     // Update is called once per frame
@@ -68,7 +76,7 @@ public class Survival : MonoBehaviour
 
     void Ganar()
     {
-        if (timr >= 120 && pause == false)
+        if (timr >= timeToPlay && pause == false)
         {
             instructions.gameObject.SetActive(true);
 
