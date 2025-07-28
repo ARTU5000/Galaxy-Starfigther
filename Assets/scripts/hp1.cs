@@ -24,6 +24,7 @@ public class hp1 : MonoBehaviour
     //public GameObject senuelo;
 
     public gameManager manager;
+    public DataManager dataManager;
 
     bool assigned = false;
 
@@ -31,6 +32,7 @@ public class hp1 : MonoBehaviour
     {
         manager = FindObjectOfType<gameManager>();
         playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
         FindHUDObjects();
         actual_life = 20;
         actual_shield = 0;
@@ -72,6 +74,7 @@ public class hp1 : MonoBehaviour
 
             if (actual_life <= 0)
             {
+                dataManager.PlayerDown(Time.time, playernum);
                 if (ships > 0)
                 {
                     for (int i = 0; i < 5; i++)
