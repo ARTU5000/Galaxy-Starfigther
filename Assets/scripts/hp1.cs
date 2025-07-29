@@ -41,6 +41,7 @@ public class hp1 : MonoBehaviour
         ships = 3;
         total_ships = 3;
         //playerships.text = ships.ToString();
+        dataManager.SetRemainingLifes(playernum, ships);
 
     }
 
@@ -91,6 +92,7 @@ public class hp1 : MonoBehaviour
 
                     //playerships.text = ships.ToString();
                     //senuelo.SetActive(false);
+                    dataManager.SetRemainingLifes(playernum, ships);
                 }
                 else
                 {
@@ -142,6 +144,11 @@ public class hp1 : MonoBehaviour
     public void masVidas()
     {
         ships++;
+
+        if (ships > total_ships)
+            ships = total_ships;
+
         Lives.fillAmount = (total_ships - ships) / total_ships;
+        dataManager.SetRemainingLifes(playernum, ships);
     }
 }

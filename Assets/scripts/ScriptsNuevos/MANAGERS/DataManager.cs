@@ -5,8 +5,12 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public int maxPlayTime;//tiempo maximo de juego
+    float currentTime;
+
     public int totalPoint;
     public List<GameObject> Players = new List<GameObject>(); //referencia a los jugadores
+    public List<int> PlayerLifes = new List<int>();
+    public int totalLifes;
 
     public Survival gamemode; //modo de juego
     public float expectedDeathTime;
@@ -30,7 +34,7 @@ public class DataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        CalculateDeathTime(maxPlayTime);
     }
 
     // Update is called once per frame
@@ -45,6 +49,11 @@ public class DataManager : MonoBehaviour
         currentPlayerDown = playerNum;
     }
 
+    public void SetRemainingLifes(int playerNum, float lifes)
+    {
+        PlayerLifes[playerNum] = (int)lifes;
+    }
+
     public void SetDificulty(int _dificulty)
     {
         dificulty = _dificulty;
@@ -53,5 +62,13 @@ public class DataManager : MonoBehaviour
     public void SetMaxPlayTime(int time)
     {
         maxPlayTime = time;
+    }
+
+    public void CalculateDeathTime(float remainingTime)
+    {
+        foreach (int a in PlayerLifes)
+            totalLifes += a;
+
+        expectedDeathTime = remainingTime / ((totalLifes / dificulty) - Players.Count);
     }
 }

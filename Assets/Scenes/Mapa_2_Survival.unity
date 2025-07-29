@@ -391,6 +391,7 @@ MonoBehaviour:
   PauseObj: {fileID: 521383308}
   Players: []
   timeToPlay: 120
+  dataManager: {fileID: 0}
 --- !u!4 &66547839
 Transform:
   m_ObjectHideFlags: 0
@@ -2081,9 +2082,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayTime: 0
-  totatPoint: 0
+  totalPoint: 0
   Players: []
+  PlayerLifes: 
+  totalLifes: 0
   gamemode: {fileID: 66547838}
+  expectedDeathTime: 0
+  lastGeneralDeath: 0
+  currentDeath: 0
+  currentPlayerDown: 0
+  lastPlayerDeath: []
   totalEnemiesDown: 0
   totalEnemyOfTypeDown: 00000000
   enemiesToSpawn: 
@@ -12346,7 +12354,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -12647,7 +12655,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -18019,7 +18027,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timr: 0
   textotimer: {fileID: 1453808603}
-  maxTime: 0
   dataManager: {fileID: 0}
 --- !u!4 &2075382546
 Transform:
