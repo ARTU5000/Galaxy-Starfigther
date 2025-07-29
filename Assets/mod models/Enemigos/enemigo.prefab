@@ -138,8 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 694377003703608962}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
   players: []
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   plasma: {fileID: 6357856987499270414, guid: 63122f7477a7ccc4ea9e90466f0fd8ea, type: 3}
@@ -150,6 +148,8 @@ MonoBehaviour:
   machine: {fileID: -7568065639285022634}
   ObjectPool: {fileID: -5716833362943395046}
   target: {fileID: 0}
+  Type: 0
+  dataManager: {fileID: 0}
 --- !u!114 &-4018604794251864904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -290,7 +290,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.018452026, b: 0, a: 0.654902}
+      key0: {r: 1, g: 0.018452026, b: 0, a: 0.7921569}
       key1: {r: 0.34117648, g: 0.01568627, b: 0.046512008, a: 0.654902}
       key2: {r: 0.017621929, g: 0.33962262, b: 0.24762239, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -404,7 +404,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -426,7 +426,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.018452026, b: 0, a: 0.654902}
+      key0: {r: 1, g: 0.018452026, b: 0, a: 0.7921569}
       key1: {r: 0.34117648, g: 0.01568627, b: 0.046512008, a: 0.654902}
       key2: {r: 0.017621929, g: 0.33962262, b: 0.24762239, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
