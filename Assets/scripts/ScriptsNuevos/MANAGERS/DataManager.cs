@@ -64,6 +64,8 @@ public class DataManager : MonoBehaviour
         maxPlayTime = time;
     }
 
+
+    //Formulas para la euristica
     public void CalculateDeathTime(float remainingTime)
     {
         foreach (int a in PlayerLifes)

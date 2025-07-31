@@ -35,7 +35,7 @@ public class TimeSet : MonoBehaviour
 
     public void RemoveTime()
     {
-        if (maxTime > 0)
+        if (maxTime > 60)
         {
             maxTime -= 20;
             dataManager.SetMaxPlayTime(maxTime);
@@ -43,7 +43,7 @@ public class TimeSet : MonoBehaviour
         }
         else
         {
-            maxTime = 0;
+            maxTime = 60;
             dataManager.SetMaxPlayTime(maxTime);
             numero.text = maxTime.ToString();
         }
