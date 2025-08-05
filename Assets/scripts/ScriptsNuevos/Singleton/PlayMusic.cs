@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayMusic : MonoBehaviour
 {
-    public AudioClip music; 
+    public AudioClip music;
+    public float volume;
 
     private void Start()
     {
         if (music != null && !IsClipPlaying(music))
         {
-            AudioManager.Instance.PlayAudioClip(music, 0.8f); // Reproduce el clip
+            AudioManager.Instance.PlayAudioClip(music, volume); // Reproduce el clip
         }
         else
         {
