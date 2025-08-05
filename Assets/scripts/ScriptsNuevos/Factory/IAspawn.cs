@@ -4,31 +4,45 @@ using UnityEngine;
 
 public class IASpawn : MonoBehaviour
 {
+    public enum SpawnType
+    {
+        Enemy,
+        PowerUp
+    }
+
+    public SpawnType type;
     public GameObject IAship;
     public float spawnInterval;
     public int spawnQuantity;
-    private float nextSpawnTime;
+    public float nextSpawnTime;
     private bool canSpawn;
 
     private Factory iaFactory;
+    public DataManager dataManager;
+    public int multiplier;
 
     private void Start()
     {
         // Inicializamos la fábrica concreta
         iaFactory = new Factory();
         canSpawn = true;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
+        GetMultiplier();
     }
 
     private void Update()
     {
+
         if (canSpawn && Time.time >= nextSpawnTime)
         {
-            SpawnShips(spawnQuantity);
+            GetMultiplier();
+            SpawnShips(multiplier * spawnQuantity);
             canSpawn = false;
         }
         else if (!canSpawn)
         {
-            nextSpawnTime = Time.time + spawnInterval;
+            GetMultiplier();
+            nextSpawnTime = Time.time + spawnInterval * (2 / multiplier);
             canSpawn = true;
         }
     }
@@ -39,5 +53,21 @@ public class IASpawn : MonoBehaviour
         {
             iaFactory.CreateIA(IAship);
         }
+    }
+
+    private void GetMultiplier()
+    {
+        switch(type)
+    {
+        case SpawnType.Enemy:
+                multiplier = dataManager.EnemiesMultiplier;
+            break;
+        case SpawnType.PowerUp:
+                multiplier = dataManager.powerUpSpawnMultiplier;
+            break;
+        default:
+            Debug.Log("Tipo desconocido");
+            break;
+    }
     }
 }

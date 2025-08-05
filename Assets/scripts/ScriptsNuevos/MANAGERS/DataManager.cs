@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 
 public class DataManager : MonoBehaviour
 {
     public int maxPlayTime;//tiempo maximo de juego
-    float currentTime;
 
     public int totalPoint;
     public List<GameObject> Players = new List<GameObject>(); //referencia a los jugadores
@@ -13,18 +13,20 @@ public class DataManager : MonoBehaviour
     public int totalLifes;
 
     public Survival gamemode; //modo de juego
-    public float expectedDeathTime;
-    public float lastGeneralDeath;
+    public float expectedDeathTime; //tiempo de muerte estimado
+    public float lastExpectedDeathTime;
+    public float lastGeneralDeath; //ultima baja
     public float currentDeath; //Baja a desarrollar
     public int currentPlayerDown; //Jugador en cuestion
-    public List<float> lastPlayerDeath = new List<float>();
+    public List<float> lastPlayerDeath = new List<float>(); //lista de tiempos de muertes de jugadores
 
     public int totalEnemiesDown;//total de enemigos eliminados
     public List<int> totalEnemyOfTypeDown = new List<int>(); //total de enemigos de cada tipo eliminados eliminados
     public bool[] enemiesToSpawn;
+    public int EnemiesMultiplier;
 
-    public float dificultyMultiplier;
-    public float dificulty;//Dificultad asignada para calcular
+    public float dificultyMultiplier;//multiplicador de dificultad
+    public int dificulty;//Dificultad asignada para calcular
 
     public int asteroidSpawnMultiplier;
 
@@ -43,20 +45,51 @@ public class DataManager : MonoBehaviour
 
     }
 
-    public void PlayerDown(float deathTime, int playerNum)
+    public void PlayerDown(float deathTime, int playerNum)//este void lo llama el jugador
     {
         currentDeath = deathTime;
-        currentPlayerDown = playerNum;
+        currentPlayerDown = playerNum;//cada jugador tiene un numero asignado y lo proporciona
+        lastExpectedDeathTime = expectedDeathTime;
+        
+        float reamainingTime = maxPlayTime - currentDeath;
+        CalculateDeathTime(reamainingTime); //consigo nuevo expectedDeathTime
+
+        float deathTimeDifference = expectedDeathTime - lastExpectedDeathTime;
+        float normalizedDifference = Mathf.Max(0, deathTimeDifference / maxPlayTime);
+
+        if (lastPlayerDeath[currentPlayerDown] == lastGeneralDeath)
+            dificultyMultiplier = (normalizedDifference * (2 * dificulty) / 3) / (1 + (normalizedDifference * (2 * dificulty) / 3) / 5);
+        else
+            dificultyMultiplier = (normalizedDifference * dificulty) / (1 + (normalizedDifference * dificulty) / 5);
+
+        ApplyMultiplier();
+
+        lastPlayerDeath[currentPlayerDown] = currentDeath;
+        lastGeneralDeath = currentDeath;
+    }
+
+    public void ApplyMultiplier()
+    {
+        EnemiesMultiplier = (int)Math.Truncate(2 * (dificultyMultiplier + 1));
+
+        asteroidSpawnMultiplier = (int)Math.Truncate(5 * (dificultyMultiplier + 2));
+        
+        powerUpSpawnMultiplier = (int)Math.Truncate (dificultyMultiplier + 1);
     }
 
     public void SetRemainingLifes(int playerNum, float lifes)
     {
         PlayerLifes[playerNum] = (int)lifes;
+        
+        CalculateDeathTime(maxPlayTime - Time.time);
     }
 
     public void SetDificulty(int _dificulty)
     {
         dificulty = _dificulty;
+        EnemiesMultiplier = dificulty;
+        asteroidSpawnMultiplier = dificulty;
+        powerUpSpawnMultiplier = dificulty;
     }
 
     public void SetMaxPlayTime(int time)
@@ -71,6 +104,6 @@ public class DataManager : MonoBehaviour
         foreach (int a in PlayerLifes)
             totalLifes += a;
 
-        expectedDeathTime = remainingTime / ((totalLifes / dificulty) - Players.Count);
+        expectedDeathTime = remainingTime / ((totalLifes  - Players.Count) / dificulty);
     }
 }

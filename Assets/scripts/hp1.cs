@@ -42,7 +42,6 @@ public class hp1 : MonoBehaviour
         total_ships = 3;
         //playerships.text = ships.ToString();
         dataManager.SetRemainingLifes(playernum, ships);
-
     }
 
     public void FindHUDObjects()

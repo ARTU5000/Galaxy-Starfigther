@@ -1238,9 +1238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2130885fb5ec34b8380e4770ca2c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   IAship: {fileID: 6486163687078090550, guid: cba64e740fcad9a4da6fd38c758e33cc, type: 3}
   spawnInterval: 10
   spawnQuantity: 1
+  nextSpawnTime: 0
+  dataManager: {fileID: 0}
+  multiplier: 0
 --- !u!1 &179857923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,12 +2095,17 @@ MonoBehaviour:
   lastGeneralDeath: 0
   currentDeath: 0
   currentPlayerDown: 0
-  lastPlayerDeath: []
+  lastPlayerDeath:
+  - 0
+  - 0
+  - 0
+  - 0
   totalEnemiesDown: 0
   totalEnemyOfTypeDown: 00000000
-  enemiesToSpawn: 
+  enemiesToSpawn: 00
+  EnemiesMultiplier: 0
   dificultyMultiplier: 0
-  dificulty: 0
+  dificulty: 1
   asteroidSpawnMultiplier: 0
   powerUpSpawnMultiplier: 0
 --- !u!1 &322055608
@@ -12570,7 +12579,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -12871,7 +12880,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -18209,9 +18218,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2130885fb5ec34b8380e4770ca2c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   IAship: {fileID: 694377003703608974, guid: 36999cb86cdb84c43a728adebf703ba6, type: 3}
-  spawnInterval: 5
-  spawnQuantity: 5
+  spawnInterval: 10
+  spawnQuantity: 2
+  nextSpawnTime: 0
+  dataManager: {fileID: 0}
+  multiplier: 0
 --- !u!1 &2075382544
 GameObject:
   m_ObjectHideFlags: 0
