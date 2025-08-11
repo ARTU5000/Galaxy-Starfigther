@@ -18340,7 +18340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   IAship: {fileID: 694377003703608974, guid: 36999cb86cdb84c43a728adebf703ba6, type: 3}
-  spawnInterval: 20
+  spawnInterval: 10
   spawnQuantity: 2
   nextSpawnTime: 10
   dataManager: {fileID: 0}

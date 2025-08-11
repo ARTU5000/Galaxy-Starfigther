@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2296261137572105295, guid: bbaafcaa164e4cc468c54190221ce28f, type: 3}
+      propertyPath: m_Pitch
+      value: 2.04
+      objectReference: {fileID: 0}
     - target: {fileID: 971898506271094394, guid: bbaafcaa164e4cc468c54190221ce28f, type: 3}
       propertyPath: thrust
       value: 300
