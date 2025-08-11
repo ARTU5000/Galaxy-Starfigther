@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     public int Type;
     public DataManager dataManager;
+    public int multiplier;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
 
         players = GameObject.FindGameObjectsWithTag("Player");
         dataManager = GameObject.FindObjectOfType<DataManager>();
+        multiplier = dataManager.EnemiesMultiplier;
 
         machine.setIA(this);
     }

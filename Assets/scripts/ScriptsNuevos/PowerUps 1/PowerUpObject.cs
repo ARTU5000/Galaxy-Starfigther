@@ -12,11 +12,17 @@ public class PowerUpObject : MonoBehaviour
 
     public bool used;
 
+    
+    public DataManager dataManager;
+    public int multiplier;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         used = false;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
+        multiplier = dataManager.powerUpSpawnMultiplier;
     }
 
     // Update is called once per frame
