@@ -16,6 +16,9 @@ public class PlayerPower : MonoBehaviour
 
     public float duration = 5f;
     public float changeRate = 0.2f;
+    public DataManager dataManager;
+    public int dificulty;
+    int difficultyModifier;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class PlayerPower : MonoBehaviour
         image.sprite = Types[0];
         hasPower = false;
         isRolling = false;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
     }
 
     // Update is called once per frame
@@ -37,9 +41,27 @@ public class PlayerPower : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        dificulty = dataManager.dificulty;
+
+        switch (dificulty) 
+        {
+            case 1:
+                difficultyModifier = 2;
+                break;
+            case 2:
+                difficultyModifier = 0;
+                break;
+            case 3:
+                difficultyModifier = -1;
+                break;
+            default:
+                difficultyModifier = 0; 
+                break;
+        }
+
         if (other.gameObject.layer == 16 && !hasPower)
         {
-            powerNum = Random.Range(0, 10);
+            powerNum = difficultyModifier + Random.Range(0, 11);
             RandomAnim();
             Destroy(other.gameObject);
         }
@@ -83,6 +105,7 @@ public class PlayerPower : MonoBehaviour
     {
         switch (powerNum)
         {
+            case -1:
             case 0:
             case 1:
             case 2:
@@ -99,6 +122,9 @@ public class PlayerPower : MonoBehaviour
                 image.sprite = Types[1];
                 break;
             case 9:
+            case 10:
+            case 11:
+            case 12:
                 image.sprite = Types[4];
                 break;
             default:
@@ -111,6 +137,7 @@ public class PlayerPower : MonoBehaviour
     {
         switch (powerNum)
         {
+            case -1:
             case 0:
             case 1:
             case 2:
@@ -132,6 +159,9 @@ public class PlayerPower : MonoBehaviour
                     hpScript.actual_shield = 20;
                 break;
             case 9:
+            case 10:
+            case 11:
+            case 12:
                 if (!isRolling)
                     hpScript.masVidas();
                 break;

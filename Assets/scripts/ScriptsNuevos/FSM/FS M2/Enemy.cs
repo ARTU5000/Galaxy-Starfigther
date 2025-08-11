@@ -42,6 +42,8 @@ public class Enemy : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         dataManager = GameObject.FindObjectOfType<DataManager>();
         multiplier = dataManager.EnemiesMultiplier;
+        
+        agent.speed = 45 * (1 + (multiplier / 5));
 
         machine.setIA(this);
     }

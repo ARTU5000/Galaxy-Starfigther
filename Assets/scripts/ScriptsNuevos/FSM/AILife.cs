@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AILife : MonoBehaviour
 {
-    public float health = 10;// indica la vida de la IA
+    public float health;// indica la vida de la IA
     //public IAEnemiga ai;
     public Enemy ai;
     [SerializeField] private float end;
     private float timer;
+    public DataManager dataManager;
+    public int multiplier;
 
      private void Awake()
     {
@@ -20,6 +22,9 @@ public class AILife : MonoBehaviour
     {
         timer = 45;
         end = Time.time + timer;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
+        multiplier = dataManager.EnemiesMultiplier;
+        health = 10 * multiplier;
     }
     
     private void Update()

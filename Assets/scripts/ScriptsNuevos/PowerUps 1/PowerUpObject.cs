@@ -34,6 +34,7 @@ public class PowerUpObject : MonoBehaviour
         }
 
         agent.SetDestination(walkpoint);
+        agent.speed = 10 + (multiplier / 10);
     }
 
     private void SetWalkPoint()// busca coordenadas a donde dirijirse
