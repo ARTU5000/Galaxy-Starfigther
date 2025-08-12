@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IASpawn : MonoBehaviour
@@ -15,19 +16,23 @@ public class IASpawn : MonoBehaviour
     public float spawnInterval;
     public int spawnQuantity;
     public float nextSpawnTime;
-    private bool canSpawn;
+    public bool canSpawn;
 
     private Factory iaFactory;
     public DataManager dataManager;
     public int multiplier;
+    public int num;
+
+    public int spawned;
 
     private void Start()
     {
         // Inicializamos la fábrica concreta
         iaFactory = new Factory();
-        canSpawn = true;
         dataManager = GameObject.FindObjectOfType<DataManager>();
         GetMultiplier();
+        num = multiplier * spawnQuantity;
+        canSpawn = true;
     }
 
     private void Update()
@@ -35,9 +40,17 @@ public class IASpawn : MonoBehaviour
 
         if (canSpawn && Time.time >= nextSpawnTime)
         {
-            GetMultiplier();
-            SpawnShips(multiplier * spawnQuantity);
-            canSpawn = false;
+            if (spawned < num)
+            {
+                canSpawn = false;
+                GetMultiplier();
+                num = multiplier * spawnQuantity;
+
+                for (int i = 0; i < num; i++)
+                {
+                    SpawnShips();
+                }
+            }
         }
         else if (!canSpawn)
         {
@@ -47,12 +60,11 @@ public class IASpawn : MonoBehaviour
         }
     }
 
-    private void SpawnShips(int count)
+    private void SpawnShips()
     {
-        for (int i = 0; i < count; i++)
-        {
-            iaFactory.CreateIA(IAship);
-        }
+        
+        iaFactory.CreateIA(IAship);
+        spawned++;
     }
 
     private void GetMultiplier()
