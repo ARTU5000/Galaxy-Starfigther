@@ -123,9 +123,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5531720581255164614, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4534793428465094676}
+    - targetCorrespondingSourceObject: {fileID: -5531720581255164614, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1434838089599485502}
     - targetCorrespondingSourceObject: {fileID: -4008579595499297552, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5505432652008634252}
+    - targetCorrespondingSourceObject: {fileID: -4008579595499297552, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6769850016026479907}
   m_SourcePrefab: {fileID: 100100000, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
 --- !u!1 &423078719403144126 stripped
 GameObject:
@@ -178,7 +184,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 2, z: 3}
+  m_Size: {x: 8, y: 2, z: 3}
   m_Center: {x: -1.8, y: 0, z: 0}
 --- !u!114 &-8733129543389126852
 MonoBehaviour:
@@ -356,6 +362,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1434838089599485502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189785247318115285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &4701986794460326431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4008579595499297552, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
@@ -423,3 +452,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6769850016026479907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701986794460326431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0

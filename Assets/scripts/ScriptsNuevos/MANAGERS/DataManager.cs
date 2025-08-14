@@ -32,11 +32,15 @@ public class DataManager : MonoBehaviour
 
     public int powerUpSpawnMultiplier;
 
+    public List<float> BossTime = new List<float>();
+    public int Bosses;
+
 
     // Start is called before the first frame update
     void Start()
     {
         CalculateDeathTime(maxPlayTime);
+
     }
 
     // Update is called once per frame
@@ -90,11 +94,14 @@ public class DataManager : MonoBehaviour
         EnemiesMultiplier = dificulty;
         asteroidSpawnMultiplier = dificulty;
         powerUpSpawnMultiplier = dificulty;
+        Bosses = dificulty;
     }
 
     public void SetMaxPlayTime(int time)
     {
+        BossTime.Clear();
         maxPlayTime = time;
+        SetBosstime();
     }
 
 
@@ -105,5 +112,46 @@ public class DataManager : MonoBehaviour
             totalLifes += a;
 
         expectedDeathTime = remainingTime / ((totalLifes  - Players.Count) / dificulty);
+    }
+
+    public void SetBosstime()
+    {
+        for (int i = 0; i < dificulty; i++)
+        {
+            BossTime.Add(UnityEngine.Random.Range(20, maxPlayTime - 20));
+        }
+        BossTime.Sort();
+    }
+
+    public void SetEnemiesToSpawn()
+    {
+        if (Time.time < maxPlayTime - 5)
+            enemiesToSpawn[0] = true;
+        else 
+            enemiesToSpawn[0] = false;
+
+        
+        if ((Time.time > (maxPlayTime / 2) && EnemiesMultiplier >= 2) || (Time.time > ((2 * maxPlayTime) / 3) && EnemiesMultiplier > 1))
+            enemiesToSpawn[1] = true;
+        else 
+            enemiesToSpawn[1] = false;
+            
+        if ((Time.time > ((2 * maxPlayTime) / 3) && EnemiesMultiplier >= 3) || Time.time > ((3 * maxPlayTime) / 4) && EnemiesMultiplier >= 2)
+            enemiesToSpawn[2] = true;
+        else 
+            enemiesToSpawn[2] = false;
+            
+        if (BossTime != null && BossTime.Count > 0)
+        {
+            if (Time.time >= BossTime[0])
+            {
+                enemiesToSpawn[3] = true;
+                BossTime.RemoveAt(0);
+            }
+            else
+                enemiesToSpawn[3] = false;
+        }
+        else
+            enemiesToSpawn[3] = false;
     }
 }

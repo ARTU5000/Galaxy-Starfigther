@@ -12,7 +12,7 @@ public class IASpawn : MonoBehaviour
     }
 
     public SpawnType type;
-    public GameObject IAship;
+    public GameObject[] IAship;
     public float spawnInterval;
     public int spawnQuantity;
     public float nextSpawnTime;
@@ -40,31 +40,42 @@ public class IASpawn : MonoBehaviour
 
         if (canSpawn && Time.time >= nextSpawnTime)
         {
-            if (spawned < num)
+            canSpawn = false;
+            GetMultiplier();
+            num = multiplier * spawnQuantity;
+            for (int i = 0; i < num; i++)
             {
-                canSpawn = false;
-                GetMultiplier();
-                num = multiplier * spawnQuantity;
+                SpawnShips(0);
+            }
 
-                for (int i = 0; i < num; i++)
-                {
-                    SpawnShips();
-                }
+            switch(type)
+            {
+                case SpawnType.Enemy:
+                    dataManager.SetEnemiesToSpawn();
+                    for (int i = 0; i < multiplier; i++)
+                    {
+                        SpawnShips(1);
+                        SpawnShips(2);
+                    }
+                    SpawnShips(3);
+                break;
+                default:
+                    Debug.Log("Tipo desconocido");
+                break;
             }
         }
         else if (!canSpawn)
         {
             GetMultiplier();
-            nextSpawnTime = Time.time + spawnInterval * (2 / multiplier);
+            nextSpawnTime = Time.time + spawnInterval * (2f / multiplier);
             canSpawn = true;
         }
     }
 
-    private void SpawnShips()
+    private void SpawnShips(int index)
     {
-        
-        iaFactory.CreateIA(IAship);
-        spawned++;
+        if(dataManager.enemiesToSpawn[index])
+            iaFactory.CreateIA(IAship[index]);
     }
 
     private void GetMultiplier()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AILife : MonoBehaviour
 {
     public float health;// indica la vida de la IA
+    public float HP;
     //public IAEnemiga ai;
     public Enemy ai;
     [SerializeField] private float end;
@@ -24,7 +25,7 @@ public class AILife : MonoBehaviour
         end = Time.time + timer;
         dataManager = GameObject.FindObjectOfType<DataManager>();
         multiplier = dataManager.EnemiesMultiplier;
-        health = 10 * multiplier;
+        health = HP * multiplier;
     }
     
     private void Update()
@@ -40,7 +41,7 @@ public class AILife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))//colisiona con un jugador
         {
-            health -= 5;
+            health -= 8;
         }
         else if (collision.gameObject.CompareTag("Normal_shoot"))//colisiona con un disparo normal
         {
@@ -48,7 +49,7 @@ public class AILife : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Asteroid"))//colisiona con un asteroide
         {
-            health -= 5;
+            health -= 2;
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))//colisiona con un disparo fuerte
         {

@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 694377003703608974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -142,7 +142,7 @@ MonoBehaviour:
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   plasma: {fileID: 6357856987499270414, guid: 63122f7477a7ccc4ea9e90466f0fd8ea, type: 3}
   shoot: {fileID: 7393363133046276290}
-  timebetweenattacks: 0.5
+  timebetweenattacks: 0.8
   sightrange: 70
   attackrange: 40
   machine: {fileID: -7568065639285022634}
@@ -150,6 +150,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Type: 0
   dataManager: {fileID: 0}
+  multiplier: 0
 --- !u!114 &-4018604794251864904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  HP: 5
   ai: {fileID: 0}
   end: 0
+  dataManager: {fileID: 0}
+  multiplier: 0
 --- !u!114 &-5716833362943395046
 MonoBehaviour:
   m_ObjectHideFlags: 0
