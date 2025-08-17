@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] players;
 
     public GameObject fragment; // indica los objetos que apareceran al desaparecer
+    public GameObject vfx; 
     public GameObject plasma;   // indica el objeto que dispara
     public GameObject shoot;    // indica el objeto desde donde dispara
     
@@ -97,6 +98,8 @@ public class Enemy : MonoBehaviour
             {
                 GameObject.Instantiate(fragment, transform.position, Quaternion.identity);
             }
+            GameObject.Instantiate(vfx, transform.position, Quaternion.identity);
+            CameraShake.instance.Shake(0.3f, 0.3f);
 
             dataManager.totalEnemyOfTypeDown[Type]++;
             dataManager.totalEnemiesDown++;

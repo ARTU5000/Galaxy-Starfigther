@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     public PlayerObjectPool HS1ObjectPool;
 
     //Valores numéricos
+    private float MaxSpeed;
     public float movementSpeed = 50f;
     public float rotationSpeed = 600f;
 
@@ -43,6 +44,7 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         //PPower = this.GetComponent<PlayerPower>();
+        MaxSpeed = movementSpeed;
     }
 
     void Update()
@@ -54,7 +56,11 @@ public class PlayerInput : MonoBehaviour
     {
         Vector3 direction = new Vector3(Input.GetAxisRaw(horizontal), 0, Input.GetAxisRaw(vertical));//movimiento jugador 
         if (direction != Vector3.zero)
-        {
+        {   
+            if (Input.GetAxisRaw(fireN) > 0 || Input.GetAxisRaw(fireH) > 0)
+                movementSpeed = MaxSpeed * 0.5f;
+            else
+                movementSpeed = MaxSpeed;
             ICommand moveCommand = new MoveCommand(player, direction, movementSpeed, rotationSpeed);
             moveCommand.Execute();
         }
@@ -80,9 +86,6 @@ public class PlayerInput : MonoBehaviour
                 p1hsNextShootTime = Time.time + hsCooldown;
             }
         }
-
-        if (Input.GetAxisRaw(fireP) > 0)
-        { Debug.Log("AAA"); }
 
         if (Input.GetAxisRaw(fireP) > 0 && PPower.hasPower)//uso de PowerUp
         {

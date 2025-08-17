@@ -12,11 +12,13 @@ public class AILife : MonoBehaviour
     private float timer;
     public DataManager dataManager;
     public int multiplier;
+    private AudioSource audioSource;
 
      private void Awake()
     {
         //ai = GetComponent<IAEnemiga>();
         ai = GetComponent<Enemy>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     private void Start()
@@ -42,19 +44,22 @@ public class AILife : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))//colisiona con un jugador
         {
             health -= 8;
+            audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("Normal_shoot"))//colisiona con un disparo normal
         {
             health -= 5;
+            audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("Asteroid"))//colisiona con un asteroide
         {
             health -= 2;
+            audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))//colisiona con un disparo fuerte
         {
-            //ai.ChangeState(ai.deadState);
-            ai.machine.ChangeState(EStates.Die);
+            health -= 15;
+            audioSource.Play();
         }
     }
 }

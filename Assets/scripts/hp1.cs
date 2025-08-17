@@ -20,6 +20,10 @@ public class hp1 : MonoBehaviour
     //public Text gameOver;//
     public int playernum;//
     public GameObject fragment;
+    public GameObject vfx; 
+    public GameObject vfx2; 
+    public GameObject Shieldvfx; 
+    public GameObject Hpvfx2; 
     public float posx;
     //public GameObject senuelo;
 
@@ -72,13 +76,22 @@ public class hp1 : MonoBehaviour
             hp.fillAmount = actual_life / total_life;
             shield.fillAmount = actual_shield / total_shield;
 
+            if(actual_shield > 0)
+                Shieldvfx.SetActive(true);
+            else
+                Shieldvfx.SetActive(false);
+
             if (actual_life <= 0)
             {
+                
+                CameraShake.instance.Shake(0.4f, 1f);
                 dataManager.PlayerDown(Time.time, playernum);
                 if (ships > 0)
                 {
                     for (int i = 0; i < 5; i++)
                         Instantiate(fragment, transform.position, Quaternion.identity);
+                        
+                    GameObject.Instantiate(vfx, transform.position, Quaternion.identity);
 
                     actual_life = 20;
                     actual_shield = 0;
@@ -98,6 +111,7 @@ public class hp1 : MonoBehaviour
                     for (int i = 0; i < 5; i++)
                         Instantiate(fragment, transform.position, Quaternion.identity);
 
+                    GameObject.Instantiate(vfx2, transform.position, Quaternion.identity);
                     //senuelo.SetActive(true);
 
                     //gameOver.text = "JUGADOR " + playernum.ToString() + " HA CAIDO";
@@ -112,6 +126,8 @@ public class hp1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Normal_shoot"))
         {
+            CameraShake.instance.Shake(0.3f, 0.4f);
+            Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield--;
             else
@@ -119,18 +135,31 @@ public class hp1 : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))
         {
+            CameraShake.instance.Shake(0.3f, 0.4f);
+            Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield -= 4;
             else
                 actual_life -= 4;
         }
 
-        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            CameraShake.instance.Shake(0.3f, 0.6f);
+            Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield -= 2;
             else
                 actual_life -= 2;
+        }
+        if (collision.gameObject.CompareTag("Asteroid"))
+        {
+            CameraShake.instance.Shake(0.3f, 0.4f);
+            Hpvfx2.SetActive(true);
+            if (actual_shield > 0)
+                actual_shield --;
+            else
+                actual_life --;
         }
     }
 

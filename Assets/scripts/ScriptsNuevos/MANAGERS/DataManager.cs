@@ -34,6 +34,7 @@ public class DataManager : MonoBehaviour
 
     public List<float> BossTime = new List<float>();
     public int Bosses;
+    private float timer;
 
 
     // Start is called before the first frame update
@@ -46,7 +47,7 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timer += Time.deltaTime;
     }
 
     public void PlayerDown(float deathTime, int playerNum)//este void lo llama el jugador
@@ -85,7 +86,7 @@ public class DataManager : MonoBehaviour
     {
         PlayerLifes[playerNum] = (int)lifes;
         
-        CalculateDeathTime(maxPlayTime - Time.time);
+        CalculateDeathTime(maxPlayTime - timer);
     }
 
     public void SetDificulty(int _dificulty)
@@ -116,7 +117,7 @@ public class DataManager : MonoBehaviour
 
     public void SetBosstime()
     {
-        for (int i = 0; i < dificulty; i++)
+        for (int i = 0; i < dificulty*((int)(maxPlayTime / 60)); i++)
         {
             BossTime.Add(UnityEngine.Random.Range(20, maxPlayTime - 20));
         }
@@ -125,25 +126,25 @@ public class DataManager : MonoBehaviour
 
     public void SetEnemiesToSpawn()
     {
-        if (Time.time < maxPlayTime - 5)
+        if (timer < maxPlayTime - 5)
             enemiesToSpawn[0] = true;
         else 
             enemiesToSpawn[0] = false;
 
         
-        if ((Time.time > (maxPlayTime / 2) && EnemiesMultiplier >= 2) || (Time.time > ((2 * maxPlayTime) / 3) && EnemiesMultiplier > 1))
+        if (timer > (maxPlayTime / 2) && EnemiesMultiplier >= 1 || EnemiesMultiplier >= 2 || timer > ((2 * maxPlayTime) / 3))
             enemiesToSpawn[1] = true;
         else 
             enemiesToSpawn[1] = false;
             
-        if ((Time.time > ((2 * maxPlayTime) / 3) && EnemiesMultiplier >= 3) || Time.time > ((3 * maxPlayTime) / 4) && EnemiesMultiplier >= 2)
+        if (timer > ((2 * maxPlayTime) / 3) && EnemiesMultiplier >= 2 || EnemiesMultiplier >= 3 || timer > ((3 * maxPlayTime) / 4))
             enemiesToSpawn[2] = true;
         else 
             enemiesToSpawn[2] = false;
             
         if (BossTime != null && BossTime.Count > 0)
         {
-            if (Time.time >= BossTime[0])
+            if (timer >= BossTime[0])
             {
                 enemiesToSpawn[3] = true;
                 BossTime.RemoveAt(0);
