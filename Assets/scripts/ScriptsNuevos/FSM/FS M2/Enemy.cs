@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour
                 GameObject.Instantiate(fragment, transform.position, Quaternion.identity);
             }
             GameObject.Instantiate(vfx, transform.position, Quaternion.identity);
-            CameraShake.instance.Shake(0.3f, 0.3f);
+            CameraShake.instance.Shake(0.3f, 0.4f);
 
             dataManager.totalEnemyOfTypeDown[Type]++;
             dataManager.totalEnemiesDown++;

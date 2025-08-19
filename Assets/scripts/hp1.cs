@@ -84,7 +84,7 @@ public class hp1 : MonoBehaviour
             if (actual_life <= 0)
             {
                 
-                CameraShake.instance.Shake(0.4f, 1f);
+                CameraShake.instance.Shake(0.4f, 2f);
                 dataManager.PlayerDown(Time.time, playernum);
                 if (ships > 0)
                 {
@@ -126,7 +126,7 @@ public class hp1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Normal_shoot"))
         {
-            CameraShake.instance.Shake(0.3f, 0.4f);
+            CameraShake.instance.Shake(0.3f, 0.5f);
             Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield--;
@@ -135,7 +135,7 @@ public class hp1 : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Heavy_shoot"))
         {
-            CameraShake.instance.Shake(0.3f, 0.4f);
+            CameraShake.instance.Shake(0.3f, 0.8f);
             Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield -= 4;
@@ -145,7 +145,7 @@ public class hp1 : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            CameraShake.instance.Shake(0.3f, 0.6f);
+            CameraShake.instance.Shake(0.3f, 0.8f);
             Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield -= 2;
@@ -154,7 +154,7 @@ public class hp1 : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Asteroid"))
         {
-            CameraShake.instance.Shake(0.3f, 0.4f);
+            CameraShake.instance.Shake(0.3f, 0.5f);
             Hpvfx2.SetActive(true);
             if (actual_shield > 0)
                 actual_shield --;

@@ -162,7 +162,7 @@ MonoBehaviour:
   total_ships: 0
   playernum: 1
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
-  vfx: {fileID: 1998800156218643111, guid: a6a29f589559a734b84b42ca504282a7, type: 3}
+  vfx: {fileID: 2130211509438411027, guid: aea357f1a8dcbd049acbab299b8ea9ad, type: 3}
   vfx2: {fileID: 2130211509438411027, guid: aea357f1a8dcbd049acbab299b8ea9ad, type: 3}
   Shieldvfx: {fileID: 8685791110819375364}
   Hpvfx2: {fileID: 2713602520953385106}
