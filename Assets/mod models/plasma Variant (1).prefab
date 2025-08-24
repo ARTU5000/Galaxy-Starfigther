@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 300
+  timer: 2
 --- !u!114 &-9027658765697574237
 MonoBehaviour:
   m_ObjectHideFlags: 0

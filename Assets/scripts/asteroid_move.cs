@@ -17,6 +17,6 @@ public class asteroid_move : MonoBehaviour
 
     void Update()
     {
-        rb.AddRelativeForce(new Vector3( 0,movetotal1, 0));
+        rb.AddRelativeForce(new Vector3( 0,movetotal1 * Time.timeScale, 0));
     }
 }

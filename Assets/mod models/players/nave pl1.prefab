@@ -111,6 +111,8 @@ GameObject:
   - component: {fileID: 4673057689137299266}
   - component: {fileID: 8055663510116344137}
   - component: {fileID: 1048371196169763632}
+  - component: {fileID: 8352292095369237628}
+  - component: {fileID: 5293982723050934187}
   - component: {fileID: 5053998424889662014}
   m_Layer: 6
   m_Name: nave pl1
@@ -233,7 +235,11 @@ MonoBehaviour:
   PNS: {fileID: 5138446428189215788}
   PHS: {fileID: 5138446427565960288}
   NS1ObjectPool: {fileID: 8055663510116344137}
-  HS1ObjectPool: {fileID: 1048371196169763632}
+  HS1ObjectPool:
+  - {fileID: 1048371196169763632}
+  - {fileID: 8352292095369237628}
+  - {fileID: 5293982723050934187}
+  HSAltOPIndex: 0
   movementSpeed: 60
   rotationSpeed: 800
   nsCooldown: 0.3
@@ -276,6 +282,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 423078719403144126, guid: bf139e436da38cd429db9d55cbbce514, type: 3}
+  initialSize: 10
+  reset: 1
+--- !u!114 &8352292095369237628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3653691042802617319, guid: ce3525089292f684f8ce27278ed74a37, type: 3}
+  initialSize: 10
+  reset: 1
+--- !u!114 &5293982723050934187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6827558563655304860, guid: 98c95d8ae7bb03848be8c8abee55b685, type: 3}
   initialSize: 10
   reset: 1
 --- !u!114 &5053998424889662014

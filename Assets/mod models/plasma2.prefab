@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: -400
+  timer: 2
 --- !u!82 &-917038439350828162
 AudioSource:
   m_ObjectHideFlags: 0

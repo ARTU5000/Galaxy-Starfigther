@@ -10,7 +10,9 @@ public class PlayerInput : MonoBehaviour
 
     //Objectpools
     public PlayerObjectPool NS1ObjectPool;
-    public PlayerObjectPool HS1ObjectPool;
+    public PlayerObjectPool[] HS1ObjectPool;
+
+    public int HSAltOPIndex;
 
     //Valores numéricos
     private float MaxSpeed;
@@ -45,6 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         //PPower = this.GetComponent<PlayerPower>();
         MaxSpeed = movementSpeed;
+        HSAltOPIndex = 0;
     }
 
     void Update()
@@ -80,7 +83,7 @@ public class PlayerInput : MonoBehaviour
         {
             if (Time.time >= p1hsNextShootTime)
             {
-                ICommand shootCommand = new ShootCommand(HS1ObjectPool, PHS);
+                ICommand shootCommand = new ShootCommand(HS1ObjectPool[HSAltOPIndex], PHS);
                 shootCommand.Execute();
 
                 p1hsNextShootTime = Time.time + hsCooldown;
