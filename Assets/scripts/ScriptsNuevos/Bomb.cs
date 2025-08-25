@@ -19,31 +19,11 @@ public class Bomb : MonoBehaviour
         rotationIncrement = 360 / number;
     }
     
-    private void OnCollisionEnter(Collision collision)
-    {
-        OnDisable();
-    }
-    
-    private void OnDisable()
+    public void fragmentsSpawn()
     {
         for (int i = 0; i < number; i++)
         {
-            // Calcular ángulo en radianes
-            float angle = i * Mathf.PI * 2 / number;
-            
-            // Calcular posición en círculo
-            Vector3 spawnPos = transform.position + new Vector3(
-                Mathf.Cos(angle) * radius,
-                0,
-                Mathf.Sin(angle) * radius
-            );
-
-            // Calcular rotación progresiva
-            float currentRotation = initialRotation + (i * rotationIncrement);
-            Quaternion spawnRot = Quaternion.Euler(0, currentRotation, 0);
-
-            // Instanciar fragmento
-            Instantiate(fragment, spawnPos, spawnRot);
+            Instantiate(fragment, transform.position, Quaternion.identity);
         }
     }
 }

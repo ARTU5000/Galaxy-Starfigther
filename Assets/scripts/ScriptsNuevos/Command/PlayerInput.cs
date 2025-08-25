@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         //PPower = this.GetComponent<PlayerPower>();
         MaxSpeed = movementSpeed;
-        HSAltOPIndex = 0;
+        HSAltOPIndex = 2;
     }
 
     void Update()

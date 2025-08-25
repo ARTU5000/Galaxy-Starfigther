@@ -371,7 +371,6 @@ GameObject:
   - component: {fileID: 4057038375020185976}
   - component: {fileID: 1305023470557386573}
   - component: {fileID: 8212111440585240471}
-  - component: {fileID: 8162666000446580532}
   m_Layer: 10
   m_Name: plasma4
   m_TagString: Heavy_shoot
@@ -457,6 +456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: -60
   timer: 2
+  fragment: {fileID: 3494031228319499770, guid: 9cd9575997b93684fab08e26beff37ce, type: 3}
+  number: 60
 --- !u!82 &8212111440585240471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -553,20 +554,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8162666000446580532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6827558563655304860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591f9cbbd8ed31840bd811e774e8d304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fragment: {fileID: 1579776244983150009, guid: bbaafcaa164e4cc468c54190221ce28f, type: 3}
-  number: 10
 --- !u!1 &7563737199456846081
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class plasmahs : MonoBehaviour
     public float timer;
     private float end;
 
+    public GameObject fragment;
+    public int number;
+
     void Awake ()
     {
         rb = GetComponent <Rigidbody>();
@@ -29,6 +32,7 @@ public class plasmahs : MonoBehaviour
     {
         if (Time.time >= end)
         {
+            fragmentsSpawn();
             OnDisable();
         }
     }
@@ -40,18 +44,45 @@ public class plasmahs : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        fragmentsSpawn();
         OnDisable();
     }
     
     private void OnDisable()
     {
-        // Reinicia transform y velocidad
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
-
+        
         gameObject.SetActive(false);
+    }
+
+    private void fragmentsSpawn()
+    {
+        if (fragment != null)
+        {
+                
+            Vector3 originalPosition = transform.position;
+            Quaternion originalRotation = transform.rotation;
+
+            float radius = 3f;
+            float heightIncrement = 0.5f;
+            float rotationIncrement = 360 / number;
+
+            for (int i = 0; i < number; i++)
+            {
+                float angle = i * Mathf.PI * 2 / (number / 2f);
+                float currentRadius = radius * (1 - (float)i / number);
+
+                Vector3 spawnPos = originalPosition + new Vector3(Mathf.Cos(angle) * currentRadius, i * heightIncrement, Mathf.Sin(angle) * currentRadius);
+
+                float currentRotation = i * rotationIncrement;
+                Quaternion spawnRot = Quaternion.Euler(0, currentRotation, 0);
+
+                Instantiate(fragment, spawnPos, spawnRot);
+            }
+        }
     }
 }
 
