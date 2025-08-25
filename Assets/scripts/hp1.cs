@@ -10,7 +10,7 @@ public class hp1 : MonoBehaviour
     public Image Lives;//
     public float actual_life;
     public float actual_shield;
-    private float total_life = 20;
+    public float total_life = 20;
     private float total_shield = 20;
     Rigidbody rb;
 
