@@ -19930,6 +19930,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572588346}
   m_CullTransparentMesh: 1
+--- !u!1 &1573968626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1573968627}
+  - component: {fileID: 1573968628}
+  m_Layer: 0
+  m_Name: powerUpspawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1573968627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573968626}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.591103, y: -0.95694375, z: -14.175373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1957416529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573968628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573968626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2130885fb5ec34b8380e4770ca2c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  IAship:
+  - {fileID: 1130870153006849194, guid: d242368ff2aff8b4ba3d3252b56d6f21, type: 3}
+  spawnInterval: 30
+  spawnQuantity: 1
+  nextSpawnTime: 1
+  canSpawn: 0
+  dataManager: {fileID: 0}
+  multiplier: 0
+  num: 0
+  spawned: 0
 --- !u!1 &1581365293
 GameObject:
   m_ObjectHideFlags: 0
@@ -19942,7 +19997,7 @@ GameObject:
   - component: {fileID: 1581365296}
   - component: {fileID: 1581365295}
   m_Layer: 5
-  m_Name: back (2)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20219,7 +20274,7 @@ GameObject:
   - component: {fileID: 1640878598}
   - component: {fileID: 1640878597}
   m_Layer: 5
-  m_Name: back
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22547,7 +22602,7 @@ GameObject:
   - component: {fileID: 1920329657}
   - component: {fileID: 1920329656}
   m_Layer: 5
-  m_Name: back (3)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22776,6 +22831,7 @@ Transform:
   - {fileID: 902691314}
   - {fileID: 2074705513}
   - {fileID: 174799728}
+  - {fileID: 1573968627}
   m_Father: {fileID: 212618011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965167627
@@ -24441,7 +24497,7 @@ GameObject:
   - component: {fileID: 2113223209}
   - component: {fileID: 2113223208}
   m_Layer: 5
-  m_Name: back (1)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

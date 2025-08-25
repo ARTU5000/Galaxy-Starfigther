@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         //PPower = this.GetComponent<PlayerPower>();
         MaxSpeed = movementSpeed;
-        HSAltOPIndex = 2;
+        HSAltOPIndex = 0;
     }
 
     void Update()
@@ -95,6 +95,20 @@ public class PlayerInput : MonoBehaviour
             PPower.UsePower(PlayerNum);
             Debug.Log(PlayerNum);
         }
+    }
+
+    public void ChangeIndex(int index)
+    {
+        HSAltOPIndex = index;
+        if (HSAltOPIndex < 0)
+            HSAltOPIndex = 0;
+        else if (HSAltOPIndex > 2)
+            HSAltOPIndex = 2;
+    }
+
+    public int GetIndex()
+    {
+        return HSAltOPIndex;
     }
 
     public void AssignControllerInputs()

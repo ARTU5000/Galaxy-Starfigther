@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerPower : MonoBehaviour
 {
     public hp1 hpScript;
+    public PlayerInput PInput;
+
     public int powerNum;
     int playernum;
     public Image image;
@@ -13,6 +15,8 @@ public class PlayerPower : MonoBehaviour
     public gameManager manager;
     private bool isRolling;
     public bool hasPower;
+    public Image backImage;
+    public Color[] GunColor;
 
     public float duration = 5f;
     public float changeRate = 0.2f;
@@ -26,6 +30,7 @@ public class PlayerPower : MonoBehaviour
         manager = FindObjectOfType<gameManager>();
         playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
         hpScript = this.GetComponent<hp1>();
+        PInput = this.GetComponent<PlayerInput>();
         GetHudRef();
         image.sprite = Types[0];
         hasPower = false;
@@ -65,6 +70,50 @@ public class PlayerPower : MonoBehaviour
             RandomAnim();
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.layer == 17)
+        {
+            GetNewGun();
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void GetNewGun()
+    {
+        Debug.Log("getGun");
+        int gunIndex = Random.Range(0, 5);
+        int PGunIndex = PInput.GetIndex();
+
+        switch (gunIndex)
+        {
+            case 0:
+            case 1:
+                if (PGunIndex == 0) 
+                {
+                    gunIndex = 2; 
+                    goto case 2;   
+                }
+                backImage.color = GunColor[0];
+                PInput.ChangeIndex(0);
+                break;
+            case 2:
+            case 3:
+                if (PGunIndex == 1) 
+                {
+                    gunIndex = 4;
+                    goto case 4;   
+                }
+                backImage.color = GunColor[1];
+                PInput.ChangeIndex(1);
+                break;
+            case 4:
+                backImage.color = GunColor[2];
+                PInput.ChangeIndex(2);
+                break;
+            default:
+                backImage.color = GunColor[0];
+                break;
+        }
     }
 
     public void RandomAnim()
@@ -100,6 +149,8 @@ public class PlayerPower : MonoBehaviour
         foreach (Transform child in allChildren)
             if (child.name == "ImagePowerUp")
                 image = child.GetComponent<Image>();
+
+        backImage = MyHUD.GetComponent<Image>();
     }
     public void getPower()
     {

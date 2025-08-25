@@ -62,6 +62,8 @@ public class plasmahs : MonoBehaviour
     {
         if (fragment != null)
         {
+            
+            CameraShake.instance.Shake(0.2f, 4f);
                 
             Vector3 originalPosition = transform.position;
             Quaternion originalRotation = transform.rotation;
