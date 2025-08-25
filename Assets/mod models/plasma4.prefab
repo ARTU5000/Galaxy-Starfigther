@@ -457,7 +457,7 @@ MonoBehaviour:
   thrust: -60
   timer: 2
   fragment: {fileID: 3494031228319499770, guid: 9cd9575997b93684fab08e26beff37ce, type: 3}
-  number: 60
+  number: 40
 --- !u!82 &8212111440585240471
 AudioSource:
   m_ObjectHideFlags: 0

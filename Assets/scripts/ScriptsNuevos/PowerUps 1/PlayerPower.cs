@@ -192,16 +192,16 @@ public class PlayerPower : MonoBehaviour
             case 0:
             case 1:
             case 2:
-                if (hpScript.actual_life <= 15 && !isRolling)
-                    hpScript.actual_life += 5;
+                if (hpScript.actual_life <= 3 * (hpScript.total_life / 4) && !isRolling)
+                    hpScript.actual_life += hpScript.total_life / 4;
                 else if (!isRolling)
-                    hpScript.actual_life = 20;
+                    hpScript.actual_life = hpScript.total_life / 4;
                 break;
             case 3:
             case 4:
             case 5:
                 if (!isRolling)
-                    hpScript.actual_life = 20;
+                    hpScript.actual_life = hpScript.total_life;
                 break;
             case 6:
             case 7:

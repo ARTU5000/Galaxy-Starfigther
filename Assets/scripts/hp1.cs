@@ -38,7 +38,9 @@ public class hp1 : MonoBehaviour
         playernum = this.gameObject.GetComponent<PlayerInput>().PlayerNum;
         dataManager = GameObject.FindObjectOfType<DataManager>();
         FindHUDObjects();
-        actual_life = 20;
+        int dificulty = dataManager.dificulty;
+        total_life = (dificulty + 1) * 10;
+        actual_life = total_life;
         actual_shield = 0;
         rb = GetComponent<Rigidbody>();
         
