@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ShipAndColor : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class ShipAndColor : MonoBehaviour
     public int playerNum;
     public CustomizationSpawn CS;
 
+    private Gamepad gamepad;
+    private bool lbWasPressed = false;
+    private bool rbWasPressed = false;
+    private bool ltWasPressed = false;
+    private bool rtWasPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +33,46 @@ public class ShipAndColor : MonoBehaviour
         modelos[currentShip].gameObject.SetActive(true);
         currentColor = playerNum;
         SetShipColor();
+    }
+
+    void Update()
+    {
+        if (Gamepad.all.Count >= playerNum)
+        {
+            gamepad = Gamepad.all[playerNum];
+            
+            bool lbPressed = gamepad.leftShoulder.isPressed;
+            bool rbPressed = gamepad.rightShoulder.isPressed;
+            
+            float ltValue = gamepad.leftTrigger.ReadValue();
+            float rtValue = gamepad.rightTrigger.ReadValue();
+            bool ltPressed = ltValue > 0.5f;
+            bool rtPressed = rtValue > 0.5f;
+            
+            if (lbPressed && !lbWasPressed)
+            {
+                buttonL();
+            }
+            lbWasPressed = lbPressed;
+            
+            if (rbPressed && !rbWasPressed)
+            {
+                buttonR();
+            }
+            rbWasPressed = rbPressed;
+            
+            if (ltPressed && !ltWasPressed)
+            {
+                colorL();
+            }
+            ltWasPressed = ltPressed;
+
+            if (rtPressed && !rtWasPressed)
+            {
+                colorR();
+            }
+            rtWasPressed = rtPressed;
+        }
     }
 
     public void turnOffModels()
