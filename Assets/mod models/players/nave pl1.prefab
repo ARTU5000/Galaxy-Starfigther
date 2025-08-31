@@ -160,6 +160,7 @@ MonoBehaviour:
   Lives: {fileID: 0}
   actual_life: 20
   actual_shield: 20
+  total_life: 20
   ships: 3
   total_ships: 0
   playernum: 1
@@ -239,7 +240,7 @@ MonoBehaviour:
   - {fileID: 1048371196169763632}
   - {fileID: 8352292095369237628}
   - {fileID: 5293982723050934187}
-  HSAltOPIndex: 0
+  HSAltOPIndex: 2
   movementSpeed: 60
   rotationSpeed: 800
   nsCooldown: 0.3

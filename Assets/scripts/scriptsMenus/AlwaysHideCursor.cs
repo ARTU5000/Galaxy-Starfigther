@@ -8,4 +8,9 @@ public class AlwaysHideCursor : MonoBehaviour
         Cursor.visible = false;
         DontDestroyOnLoad(gameObject);
     }
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
 }

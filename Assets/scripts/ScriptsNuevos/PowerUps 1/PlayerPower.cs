@@ -90,22 +90,30 @@ public class PlayerPower : MonoBehaviour
             case 1:
                 if (PGunIndex == 0) 
                 {
-                    gunIndex = 2; 
-                    goto case 2;   
+                    backImage.color = GunColor[1];
+                    PInput.ChangeIndex(1);
+                    break;
                 }
-                backImage.color = GunColor[0];
-                PInput.ChangeIndex(0);
-                break;
+                else
+                {
+                    backImage.color = GunColor[0];
+                    PInput.ChangeIndex(0);
+                    break;
+                }
             case 2:
             case 3:
                 if (PGunIndex == 1) 
                 {
-                    gunIndex = 4;
-                    goto case 4;   
+                    backImage.color = GunColor[2];
+                    PInput.ChangeIndex(2);
+                    break;
                 }
-                backImage.color = GunColor[1];
-                PInput.ChangeIndex(1);
-                break;
+                else
+                {
+                    backImage.color = GunColor[1];
+                    PInput.ChangeIndex(1);
+                    break;
+                }
             case 4:
                 backImage.color = GunColor[2];
                 PInput.ChangeIndex(2);
