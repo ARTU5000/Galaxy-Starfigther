@@ -75,7 +75,14 @@ public class IASpawn : MonoBehaviour
         else if (!canSpawn)
         {
             GetMultiplier();
-            nextSpawnTime = timer + ((spawnInterval - (4f * multiplier)) - (6f / multiplier));
+
+            float bias = 0;
+            if (multiplier > 2)
+                bias = -0.5f;
+            else if (multiplier < 2)
+                bias = 1.5f;
+
+            nextSpawnTime = timer + ((spawnInterval - (4f * multiplier)) - (6f / multiplier ) - bias);
             canSpawn = true;
         }
     }
