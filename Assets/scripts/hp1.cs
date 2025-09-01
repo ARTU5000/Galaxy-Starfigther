@@ -159,9 +159,9 @@ public class hp1 : MonoBehaviour
             CameraShake.instance.Shake(0.3f, 0.5f);
             Hpvfx2.SetActive(true);
             if (actual_shield > 0)
-                actual_shield --;
+                actual_shield -= 2;
             else
-                actual_life --;
+                actual_life -= 2;
         }
     }
 

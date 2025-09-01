@@ -344,8 +344,8 @@ MonoBehaviour:
   - {r: 0, g: 0.69803923, b: 0.96862745, a: 0.7019608}
   - {r: 0, g: 0.4339623, b: 0.17080507, a: 0.7019608}
   - {r: 0.96862745, g: 0, b: 0.6788339, a: 0.7019608}
-  duration: 0.5
-  changeRate: 0.01
+  duration: 0.1
+  changeRate: 0.001
   dataManager: {fileID: 0}
   dificulty: 0
 --- !u!1 &5138446428189215791
