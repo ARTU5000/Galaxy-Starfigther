@@ -48,6 +48,7 @@ public class PowerUpObject : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
+            dataManager.totalPoint += 50;
             Destroy(this.gameObject);
         }
     }

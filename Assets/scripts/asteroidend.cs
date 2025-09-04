@@ -9,6 +9,7 @@ public class asteroidend : MonoBehaviour
     private float end;
     private int contador = 0;
     private float timer;
+    public DataManager dataManager;
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class asteroidend : MonoBehaviour
         timer = Random.Range(20, 40);
 
         end = Time.time + timer;
+        dataManager = GameObject.FindObjectOfType<DataManager>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,10 @@ public class asteroidend : MonoBehaviour
             contador++;
         else
         {
+            if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Normal_shoot") || collision.gameObject.CompareTag("Heavy_shoot"))
+            {
+                dataManager.totalPoint += 5;
+            }
             final = true;
         }
     }

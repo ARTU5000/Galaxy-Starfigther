@@ -384,11 +384,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 30
+  m_Speed: 20
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 600
-  m_StoppingDistance: 25
+  m_StoppingDistance: 30
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -445,11 +445,11 @@ MonoBehaviour:
   players: []
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   vfx: {fileID: 1998800156218643111, guid: a6a29f589559a734b84b42ca504282a7, type: 3}
-  plasma: {fileID: 6357856987499270414, guid: 63122f7477a7ccc4ea9e90466f0fd8ea, type: 3}
+  plasma: {fileID: 6514869807546949795, guid: d94388000a1747b47ad4636e79773185, type: 3}
   shoot: {fileID: 5288796240566189853}
   timebetweenattacks: 0.4
   sightrange: 90
-  attackrange: 60
+  attackrange: 70
   machine: {fileID: 3050961501176030793}
   ObjectPool: {fileID: 8935479659008941286}
   target: {fileID: 0}

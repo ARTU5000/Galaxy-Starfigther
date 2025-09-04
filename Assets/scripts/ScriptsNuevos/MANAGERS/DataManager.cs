@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System; 
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
     public int maxPlayTime;//tiempo maximo de juego
 
     public int totalPoint;
+    public Text textPoints;
+
     public List<GameObject> Players = new List<GameObject>(); //referencia a los jugadores
     public List<int> PlayerLifes = new List<int>();
     public int totalLifes;
@@ -48,6 +51,7 @@ public class DataManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        textPoints.text = totalPoint.ToString();
     }
 
     public void PlayerDown(float deathTime, int playerNum)//este void lo llama el jugador

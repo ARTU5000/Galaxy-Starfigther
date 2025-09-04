@@ -31,6 +31,7 @@ public class PlayerInput : MonoBehaviour
     public string fireN;
     public string fireH;
     public string fireP;
+    public string stop;
 
     //textos de busqueda
     public string tagPlayer;
@@ -61,7 +62,14 @@ public class PlayerInput : MonoBehaviour
         if (direction != Vector3.zero)
         {   
             if (Input.GetAxisRaw(fireN) > 0 || Input.GetAxisRaw(fireH) > 0)
-                movementSpeed = MaxSpeed * 0.5f;
+            {   
+                if (Input.GetAxisRaw(stop) > 0)//freno
+                    movementSpeed = 0f;
+                else
+                    movementSpeed = MaxSpeed * 0.5f;
+            }
+            else if (Input.GetAxisRaw(stop) > 0)//freno
+                movementSpeed = 0f;
             else
                 movementSpeed = MaxSpeed;
             ICommand moveCommand = new MoveCommand(player, direction, movementSpeed, rotationSpeed);
@@ -102,8 +110,8 @@ public class PlayerInput : MonoBehaviour
         HSAltOPIndex = index;
         if (HSAltOPIndex < 0)
             HSAltOPIndex = 0;
-        else if (HSAltOPIndex > 2)
-            HSAltOPIndex = 2;
+        else if (HSAltOPIndex > HS1ObjectPool.Length)
+            HSAltOPIndex = HS1ObjectPool.Length;
     }
 
     public int GetIndex()
@@ -121,6 +129,7 @@ public class PlayerInput : MonoBehaviour
                 fireN = "Fire1P1";
                 fireH = "Fire2P1";
                 fireP = "PowerP1";
+                stop = "StopP1";
                 break;
             case 1:
                 horizontal = "HorizontalP2";
@@ -128,6 +137,7 @@ public class PlayerInput : MonoBehaviour
                 fireN = "Fire1P2";
                 fireH = "Fire2P2";
                 fireP = "PowerP2";
+                stop = "StopP2";
                 break;
             case 2:
                 horizontal = "HorizontalP3";
@@ -135,6 +145,7 @@ public class PlayerInput : MonoBehaviour
                 fireN = "Fire1P3";
                 fireH = "Fire2P3";
                 fireP = "PowerP3";
+                stop = "StopP3";
                 break;
             case 3:
                 horizontal = "HorizontalP4";
@@ -142,6 +153,7 @@ public class PlayerInput : MonoBehaviour
                 fireN = "Fire1P4";
                 fireH = "Fire2P4";
                 fireP = "PowerP4";
+                stop = "StopP4";
                 break;
             default:
                 break;

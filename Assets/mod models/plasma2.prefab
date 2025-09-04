@@ -87,11 +87,11 @@ PrefabInstance:
     - target: {fileID: 1526765091555345458, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 47341286f6a6d9d4d8467b0c776198d1, type: 2}
+      objectReference: {fileID: 2100000, guid: a6764aa7069f3dd40a4b4df5eadd6a7e, type: 2}
     - target: {fileID: 5423252559524178949, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 47341286f6a6d9d4d8467b0c776198d1, type: 2}
+      objectReference: {fileID: 2100000, guid: a6764aa7069f3dd40a4b4df5eadd6a7e, type: 2}
     - target: {fileID: 8695053351801088550, guid: 0906f7452284e8e4f9d062bc3ed62d87, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.6957753
@@ -200,6 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: -400
   timer: 2
+  fragment: {fileID: 0}
+  number: 0
 --- !u!82 &-917038439350828162
 AudioSource:
   m_ObjectHideFlags: 0
@@ -212,7 +214,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d834ace4ae9e7d4d912111bba00519e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 3
   Loop: 0
   Mute: 0

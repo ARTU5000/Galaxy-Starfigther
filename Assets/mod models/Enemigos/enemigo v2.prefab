@@ -278,7 +278,7 @@ MonoBehaviour:
   players: []
   fragment: {fileID: 8911139329401599097, guid: e78310d7ee0a85b48adb19eb43a29682, type: 3}
   vfx: {fileID: 1998800156218643111, guid: a6a29f589559a734b84b42ca504282a7, type: 3}
-  plasma: {fileID: 6357856987499270414, guid: 63122f7477a7ccc4ea9e90466f0fd8ea, type: 3}
+  plasma: {fileID: 5665936912817431450, guid: 18ddfc31c31e3844ebec1d6e4976961b, type: 3}
   shoot: {fileID: 4077374199199778055}
   timebetweenattacks: 0.6
   sightrange: 70

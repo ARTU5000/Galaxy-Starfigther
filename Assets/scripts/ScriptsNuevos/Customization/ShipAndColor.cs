@@ -37,9 +37,12 @@ public class ShipAndColor : MonoBehaviour
 
     void Update()
     {
-        if (Gamepad.all.Count >= playerNum)
+        if (Gamepad.all.Count > playerNum)
         {
-            gamepad = Gamepad.all[playerNum];
+            if (Gamepad.all[playerNum] == null)
+                gamepad = Gamepad.all[0];
+            else
+                gamepad = Gamepad.all[playerNum];
             
             bool lbPressed = gamepad.leftShoulder.isPressed;
             bool rbPressed = gamepad.rightShoulder.isPressed;

@@ -81,7 +81,7 @@ public class PlayerPower : MonoBehaviour
     public void GetNewGun()
     {
         Debug.Log("getGun");
-        int gunIndex = Random.Range(0, 5);
+        int gunIndex = Random.Range(0, 6);
         int PGunIndex = PInput.GetIndex();
 
         switch (gunIndex)
@@ -115,8 +115,21 @@ public class PlayerPower : MonoBehaviour
                     break;
                 }
             case 4:
-                backImage.color = GunColor[2];
-                PInput.ChangeIndex(2);
+                if (PGunIndex == 2) 
+                {
+                    backImage.color = GunColor[3];
+                    PInput.ChangeIndex(3);
+                    break;
+                }
+                else
+                {
+                    backImage.color = GunColor[2];
+                    PInput.ChangeIndex(2);
+                    break;
+                }
+            case 5:
+                backImage.color = GunColor[3];
+                PInput.ChangeIndex(3);
                 break;
             default:
                 backImage.color = GunColor[0];
@@ -158,7 +171,11 @@ public class PlayerPower : MonoBehaviour
             if (child.name == "ImagePowerUp")
                 image = child.GetComponent<Image>();
 
-        backImage = MyHUD.GetComponent<Image>();
+        foreach (Transform child in allChildren)
+            if (child.name == "Back")
+                backImage = child.GetComponent<Image>();
+
+        backImage.color = GunColor[0];
     }
     public void getPower()
     {

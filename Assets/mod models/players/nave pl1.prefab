@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 1048371196169763632}
   - component: {fileID: 8352292095369237628}
   - component: {fileID: 5293982723050934187}
+  - component: {fileID: 6421028867201207584}
   - component: {fileID: 5053998424889662014}
   m_Layer: 6
   m_Name: nave pl1
@@ -240,6 +241,7 @@ MonoBehaviour:
   - {fileID: 1048371196169763632}
   - {fileID: 8352292095369237628}
   - {fileID: 5293982723050934187}
+  - {fileID: 6421028867201207584}
   HSAltOPIndex: 2
   movementSpeed: 60
   rotationSpeed: 800
@@ -250,6 +252,7 @@ MonoBehaviour:
   fireN: Fire1P1
   fireH: 
   fireP: 
+  stop: 
   tagPlayer: Player
   tagPNS: P1NS
   tagPHS: P1HS
@@ -315,6 +318,21 @@ MonoBehaviour:
   prefab: {fileID: 6827558563655304860, guid: 98c95d8ae7bb03848be8c8abee55b685, type: 3}
   initialSize: 10
   reset: 1
+--- !u!114 &6421028867201207584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138446427806862713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdff7b01210ee1242bcdb6490ad507eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 573895635711440896, guid: 7c9324b5a7082b44e94747b37a89f9a6, type: 3}
+  initialSize: 10
+  reset: 1
 --- !u!114 &5053998424889662014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,9 +359,10 @@ MonoBehaviour:
   hasPower: 0
   backImage: {fileID: 0}
   GunColor:
-  - {r: 0, g: 0.69803923, b: 0.96862745, a: 0.7019608}
-  - {r: 0, g: 0.4339623, b: 0.17080507, a: 0.7019608}
+  - {r: 0, g: 0.48796034, b: 1, a: 0.7019608}
+  - {r: 1, g: 0.93721867, b: 0, a: 0.7019608}
   - {r: 0.96862745, g: 0, b: 0.6788339, a: 0.7019608}
+  - {r: 0.30168304, g: 0.6792453, b: 0, a: 0.7019608}
   duration: 0.1
   changeRate: 0.001
   dataManager: {fileID: 0}
@@ -1083,6 +1102,10 @@ PrefabInstance:
     - target: {fileID: 6735359476003278106, guid: 5e6828dc41a5c9e42b5bfcbed643c4fe, type: 3}
       propertyPath: m_Name
       value: nave blindaje
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735359476003278106, guid: 5e6828dc41a5c9e42b5bfcbed643c4fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
