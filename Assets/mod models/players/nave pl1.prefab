@@ -367,6 +367,12 @@ MonoBehaviour:
   changeRate: 0.001
   dataManager: {fileID: 0}
   dificulty: 0
+  PowerUpText:
+  - {fileID: 6805598093662269050, guid: e6db2986c9caf6b43b6223b93f8f948a, type: 3}
+  - {fileID: 867492911931656429, guid: 52237a4a2d3a298449e9dc348357af38, type: 3}
+  - {fileID: 5098169192955751321, guid: f2ebc2e45195d754593ce6147afd7461, type: 3}
+  - {fileID: 8043147089838452879, guid: 3b6481127f13bed438691bf7c9942d3a, type: 3}
+  - {fileID: 8417661440595798803, guid: 482106e5be5cf544881e9e41f7a0ba54, type: 3}
 --- !u!1 &5138446428189215791
 GameObject:
   m_ObjectHideFlags: 0

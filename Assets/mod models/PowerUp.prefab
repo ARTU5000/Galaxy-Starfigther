@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   used: 0
+  dataManager: {fileID: 0}
+  multiplier: 0
 --- !u!195 &7499273892218314358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -272,7 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f1951a4d417b41bebb1f5cc404b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
 --- !u!1 &7137869242897411306
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +596,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 3.4, z: 0}

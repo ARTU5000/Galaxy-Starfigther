@@ -24,6 +24,10 @@ public class PlayerPower : MonoBehaviour
     public int dificulty;
     int difficultyModifier;
 
+    public GameObject[] PowerUpText;
+    bool gotgun;
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,11 @@ public class PlayerPower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gotgun && Time.time >= timer)
+        {
+            gotgun = false;
+            Debug.Log("lito");
+        }
 
     }
 
@@ -69,11 +78,17 @@ public class PlayerPower : MonoBehaviour
             powerNum = difficultyModifier + Random.Range(0, 11);
             RandomAnim();
             Destroy(other.gameObject);
+            Instantiate(PowerUpText[0], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
         }
 
         if (other.gameObject.layer == 17)
         {
-            GetNewGun();
+            if (!gotgun)
+            {
+                gotgun = true;
+                GetNewGun();
+                timer = Time.time + 1;
+            }
             Destroy(other.gameObject);
         }
     }
@@ -88,51 +103,70 @@ public class PlayerPower : MonoBehaviour
         {
             case 0:
             case 1:
-                if (PGunIndex == 0) 
+                if (PGunIndex != 0) 
+                {
+                    backImage.color = GunColor[0];
+                    PInput.ChangeIndex(0);
+                    Instantiate(PowerUpText[1], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+                else
                 {
                     backImage.color = GunColor[1];
                     PInput.ChangeIndex(1);
+                    Instantiate(PowerUpText[2], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+            case 2:
+            case 3:
+                if (PGunIndex != 1) 
+                {
+                    backImage.color = GunColor[1];
+                    PInput.ChangeIndex(1);
+                    Instantiate(PowerUpText[2], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+                else
+                {
+                    backImage.color = GunColor[2];
+                    PInput.ChangeIndex(2);
+                    Instantiate(PowerUpText[3], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+            case 4:
+                if (PGunIndex != 2) 
+                {
+                    backImage.color = GunColor[2];
+                    PInput.ChangeIndex(2);
+                    Instantiate(PowerUpText[3], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+                else
+                {
+                    backImage.color = GunColor[3];
+                    PInput.ChangeIndex(3);
+                    Instantiate(PowerUpText[4], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    break;
+                }
+            case 5:
+                if (PGunIndex != 3) 
+                {
+                    backImage.color = GunColor[3];
+                    PInput.ChangeIndex(3);
+                    Instantiate(PowerUpText[4], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
                     break;
                 }
                 else
                 {
                     backImage.color = GunColor[0];
                     PInput.ChangeIndex(0);
+                    Instantiate(PowerUpText[1], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
                     break;
                 }
-            case 2:
-            case 3:
-                if (PGunIndex == 1) 
-                {
-                    backImage.color = GunColor[2];
-                    PInput.ChangeIndex(2);
-                    break;
-                }
-                else
-                {
-                    backImage.color = GunColor[1];
-                    PInput.ChangeIndex(1);
-                    break;
-                }
-            case 4:
-                if (PGunIndex == 2) 
-                {
-                    backImage.color = GunColor[3];
-                    PInput.ChangeIndex(3);
-                    break;
-                }
-                else
-                {
-                    backImage.color = GunColor[2];
-                    PInput.ChangeIndex(2);
-                    break;
-                }
-            case 5:
-                backImage.color = GunColor[3];
-                PInput.ChangeIndex(3);
-                break;
             default:
                 backImage.color = GunColor[0];
+                PInput.ChangeIndex(0);
+                Instantiate(PowerUpText[1], this.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
                 break;
         }
     }
@@ -220,7 +254,7 @@ public class PlayerPower : MonoBehaviour
                 if (hpScript.actual_life <= 3 * (hpScript.total_life / 4) && !isRolling)
                     hpScript.actual_life += hpScript.total_life / 4;
                 else if (!isRolling)
-                    hpScript.actual_life = hpScript.total_life / 4;
+                    hpScript.actual_life = hpScript.total_life;
                 break;
             case 3:
             case 4:
